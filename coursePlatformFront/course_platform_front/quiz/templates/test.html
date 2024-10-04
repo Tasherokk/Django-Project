@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <style>
+        #resultContainer {
+            display: none; /* Скрыть блок с результатом по умолчанию */
+            text-align: center;
+            font-size: 24px;
+            padding: 50px;
+        }
+        #questionContainer, #navigationButtons {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <form id="testForm">
+        <div id="questionContainer"></div>
+
+        <div id="navigationButtons">
+            <button type="button" id="prevButton" onclick="showPreviousQuestion()">Previous</button>
+            <button type="button" id="nextButton" onclick="showNextQuestion()">Next</button>
+            <button type="submit" id="submitButton" style="display:none;">Submit</button>
+        </div>
+    </form>
+
+    <div id="resultContainer"></div> <!-- Этот блок будет показывать результат теста -->
+
+    <script>
+        let questions = [];
+        let currentQuestionIndex = 0;
+
+        async function loadTest() {
+            const response = await fetch('http://localhost:8000/test/');
+            questions = await response.json();
+            showQuestion(currentQuestionIndex);
+        }
+
+        function showQuestion(index) {
+            const questionContainer = document.getElementById('questionContainer');
+            const question = questions[index];
+
+            questionContainer.innerHTML = `<p>${question.text}</p>`;
+            question.answers.forEach(answer => {
+                const checked = question.selectedAnswer == answer.id ? 'checked' : '';
+                questionContainer.innerHTML += `
+                    <input type="radio" name="q${question.id}" value="${answer.id}" ${checked}>
+                    ${answer.text}<br>`;
+            });
+
+            document.getElementById('prevButton').style.display = index === 0 ? 'none' : 'inline';
+            document.getElementById('nextButton').style.display = index === questions.length - 1 ? 'none' : 'inline';
+            document.getElementById('submitButton').style.display = index === questions.length - 1 ? 'inline' : 'none';
+        }
+
+        function saveCurrentAnswer() {
+            const formData = new FormData(document.getElementById('testForm'));
+            formData.forEach((value, key) => {
+                const questionId = key.slice(1);  // Remove 'q' prefix
+                const answerId = value;
+                const question = questions.find(q => q.id == questionId);
+                question.selectedAnswer = answerId;  // Save the selected answer for this question
+            });
+        }
+
+        function showNextQuestion() {
+            saveCurrentAnswer();
+            if (currentQuestionIndex < questions.length - 1) {
+                currentQuestionIndex++;
+                showQuestion(currentQuestionIndex);
+            }
+        }
+
+        function showPreviousQuestion() {
+            saveCurrentAnswer();
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                showQuestion(currentQuestionIndex);
+            }
+        }
+
+        document.getElementById('testForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            saveCurrentAnswer();
+
+            const answers = {};
+            questions.forEach(question => {
+                answers[question.id] = question.selectedAnswer;  // Collect all selected answers
+            });
+
+            const response = await fetch('http://localhost:8000/submit/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({answers}),
+            });
+
+            const result = await response.json();
+
+            // Скрываем тест и показываем результат
+            document.getElementById('testForm').style.display = 'none';
+            document.getElementById('resultContainer').style.display = 'block';
+            document.getElementById('resultContainer').innerHTML = `
+                <h1>Your score is: ${result.score}</h1>
+            `;
+        });
+
+        loadTest();  // Load the test on page load
+    </script>
+</body>
+</html>
