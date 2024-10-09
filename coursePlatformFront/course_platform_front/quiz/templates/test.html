@@ -4,17 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test</title>
-    <style>
-        #resultContainer {
-            display: none; /* Скрыть блок с результатом по умолчанию */
-            text-align: center;
-            font-size: 24px;
-            padding: 50px;
-        }
-        #questionContainer, #navigationButtons {
-            display: block;
-        }
-    </style>
 </head>
 <body>
     <form id="testForm">
@@ -27,7 +16,7 @@
         </div>
     </form>
 
-    <div id="resultContainer"></div> <!-- Этот блок будет показывать результат теста -->
+    <div id="resultContainer" style="display:none; text-align: center; font-size: 24px; padding: 50px;"></div>
 
     <script>
         let questions = [];
@@ -36,6 +25,8 @@
         async function loadTest() {
             const response = await fetch('http://localhost:8000/test/');
             questions = await response.json();
+
+            // Показать первый вопрос после загрузки
             showQuestion(currentQuestionIndex);
         }
 
@@ -43,14 +34,18 @@
             const questionContainer = document.getElementById('questionContainer');
             const question = questions[index];
 
+            // Очистка контейнера с вопросом
             questionContainer.innerHTML = `<p>${question.text}</p>`;
-            question.answers.forEach(answer => {
-                const checked = question.selectedAnswer == answer.id ? 'checked' : '';
-                questionContainer.innerHTML += `
-                    <input type="radio" name="q${question.id}" value="${answer.id}" ${checked}>
-                    ${answer.text}<br>`;
-            });
 
+            // Добавляем четыре варианта ответа
+            questionContainer.innerHTML += `
+                <input type="radio" name="q${question.id}" value="1"> ${question.answer.option_1}<br>
+                <input type="radio" name="q${question.id}" value="2"> ${question.answer.option_2}<br>
+                <input type="radio" name="q${question.id}" value="3"> ${question.answer.option_3}<br>
+                <input type="radio" name="q${question.id}" value="4"> ${question.answer.option_4}<br>
+            `;
+
+            // Показываем или скрываем кнопки
             document.getElementById('prevButton').style.display = index === 0 ? 'none' : 'inline';
             document.getElementById('nextButton').style.display = index === questions.length - 1 ? 'none' : 'inline';
             document.getElementById('submitButton').style.display = index === questions.length - 1 ? 'inline' : 'none';
@@ -59,10 +54,10 @@
         function saveCurrentAnswer() {
             const formData = new FormData(document.getElementById('testForm'));
             formData.forEach((value, key) => {
-                const questionId = key.slice(1);  // Remove 'q' prefix
+                const questionId = key.slice(1);  // Убираем префикс 'q'
                 const answerId = value;
                 const question = questions.find(q => q.id == questionId);
-                question.selectedAnswer = answerId;  // Save the selected answer for this question
+                question.selectedAnswer = answerId;  // Сохраняем выбранный ответ для этого вопроса
             });
         }
 
@@ -88,7 +83,7 @@
 
             const answers = {};
             questions.forEach(question => {
-                answers[question.id] = question.selectedAnswer;  // Collect all selected answers
+                answers[question.id] = question.selectedAnswer;  // Сохранение всех выбранных ответов
             });
 
             const response = await fetch('http://localhost:8000/submit/', {
@@ -104,12 +99,10 @@
             // Скрываем тест и показываем результат
             document.getElementById('testForm').style.display = 'none';
             document.getElementById('resultContainer').style.display = 'block';
-            document.getElementById('resultContainer').innerHTML = `
-                <h1>Your score is: ${result.score}</h1>
-            `;
+            document.getElementById('resultContainer').innerHTML = `<h1>Your score is: ${result.score}</h1>`;
         });
 
-        loadTest();  // Load the test on page load
+        loadTest();  // Загружаем тест при загрузке страницы
     </script>
 </body>
 </html>
