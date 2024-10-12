@@ -2,6 +2,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.home, name='home'),
-    path('<int:pk>/', views.video_detail, name='video_detail'),
+    path('videos/', views.video_list, name='videos'),  # Отображение всех видео для темы
+    path('videos/<int:video_id>/', views.video_detail, name='video_detail'),  # Детальная страница для видео
 ]

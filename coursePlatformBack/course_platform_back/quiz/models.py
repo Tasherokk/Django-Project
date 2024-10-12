@@ -1,4 +1,6 @@
 from django.db import models
+from video.models import Video
+
 
 class Question(models.Model):
     text = models.CharField(max_length=255)
@@ -18,7 +20,15 @@ class Answer(models.Model):
         (2, 'Option 2'),
         (3, 'Option 3'),
         (4, 'Option 4'),
-    ])  # Ссылается на правильный вариант (1, 2, 3 или 4)
+    ])
 
     def __str__(self):
         return f"Answer for: {self.question.text}"
+
+
+class Test(models.Model):
+    video = models.OneToOneField(Video, on_delete=models.CASCADE, related_name='test')
+    questions = models.ManyToManyField('Question')
+
+    def __str__(self):
+        return f"Test for {self.video.title}"

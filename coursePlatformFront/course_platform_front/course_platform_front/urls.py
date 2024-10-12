@@ -21,7 +21,6 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('video/',include('video.urls')),
-    path('', include('quiz.urls')),
+    path('',include('course.urls')),
 
 ]
