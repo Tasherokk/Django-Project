@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Course(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
@@ -10,7 +11,7 @@ class Course(models.Model):
 
 
 class Topic(models.Model):
-    course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='topics')
+    course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name="topics")
     title = models.CharField(max_length=255)
     description = models.TextField()
 
