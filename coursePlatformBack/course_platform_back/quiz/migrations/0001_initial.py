@@ -8,27 +8,59 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Question',
+            name="Question",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('text', models.CharField(max_length=255)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("text", models.CharField(max_length=255)),
             ],
         ),
         migrations.CreateModel(
-            name='Answer',
+            name="Answer",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('option_1', models.CharField(max_length=255)),
-                ('option_2', models.CharField(max_length=255)),
-                ('option_3', models.CharField(max_length=255)),
-                ('option_4', models.CharField(max_length=255)),
-                ('correct_option', models.IntegerField(choices=[(1, 'Option 1'), (2, 'Option 2'), (3, 'Option 3'), (4, 'Option 4')])),
-                ('question', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, related_name='answer', to='quiz.question')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("option_1", models.CharField(max_length=255)),
+                ("option_2", models.CharField(max_length=255)),
+                ("option_3", models.CharField(max_length=255)),
+                ("option_4", models.CharField(max_length=255)),
+                (
+                    "correct_option",
+                    models.IntegerField(
+                        choices=[
+                            (1, "Option 1"),
+                            (2, "Option 2"),
+                            (3, "Option 3"),
+                            (4, "Option 4"),
+                        ]
+                    ),
+                ),
+                (
+                    "question",
+                    models.OneToOneField(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="answer",
+                        to="quiz.question",
+                    ),
+                ),
             ],
         ),
     ]

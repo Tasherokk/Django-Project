@@ -7,13 +7,20 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('video', '0001_initial'),
+        ("video", "0001_initial"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='video',
-            name='file',
-            field=models.FileField(upload_to='videos/', validators=[django.core.validators.FileExtensionValidator(allowed_extensions=['mp4'])]),
+            model_name="video",
+            name="file",
+            field=models.FileField(
+                upload_to="videos/",
+                validators=[
+                    django.core.validators.FileExtensionValidator(
+                        allowed_extensions=["mp4"]
+                    )
+                ],
+            ),
         ),
     ]
