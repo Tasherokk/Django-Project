@@ -1,9 +1,10 @@
 import requests  # Импортируйте requests правильно
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 
 BACKEND_URL = "http://127.0.0.1:8000/course/api/"
 
-
+@login_required(login_url="my-login")
 def courses(request):
     try:
         response = requests.get(
@@ -18,7 +19,7 @@ def courses(request):
 
     return render(request, "courses.html", {"course_list": courses})
 
-
+@login_required(login_url="my-login")
 def topics(request, pk):
     try:
         response = requests.get(f"{BACKEND_URL}courses/{pk}/topics/")

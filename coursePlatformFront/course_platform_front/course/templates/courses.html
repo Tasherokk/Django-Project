@@ -1,6 +1,12 @@
+
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'courses/courses.css' %}">
+
+    <a href="{% url 'user-logout' %}" > Logout here </a>
+
 
     <h1>Available Courses</h1>
 

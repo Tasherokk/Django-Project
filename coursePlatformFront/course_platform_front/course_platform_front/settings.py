@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "video",
     "quiz",
     "course",
+    "users",
 ]
 
 MIDDLEWARE = [
