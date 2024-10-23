@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'videos/videos.css' %}">
 
     {% if video_list %}
     {% for video in video_list %}

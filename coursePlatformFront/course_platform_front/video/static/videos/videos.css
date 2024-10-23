@@ -1,0 +1,101 @@
+body, h1, h4, p, a, img {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #f0f8ff 0%, #e0e0e0 100%);
+    font-family: 'Arial', sans-serif;
+    padding: 20px; /* To add some space for scrolling if content is long */
+}
+
+/* Container for the videos list */
+.container {
+    width: 90%;
+    max-width: 1000px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+    animation: fadeIn 0.5s ease;
+    text-align: center;
+}
+
+.container:hover {
+    transform: scale(1.02);
+}
+
+/* Video title */
+h4 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.8);
+}
+
+/* Video image styling */
+img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+/* Link to video detail */
+a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #007bff;
+}
+
+/* Message for no available videos */
+p {
+    font-size: 1.2em;
+    color: #555;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    h4 {
+        font-size: 1.5em;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    img {
+        width: 100%;
+        max-width: 350px;
+    }
+}
