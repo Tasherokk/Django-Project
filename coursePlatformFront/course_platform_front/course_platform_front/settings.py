@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "quiz",
     "course",
     "users",
+    "crispy_forms",
 ]
 
 MIDDLEWARE = [
