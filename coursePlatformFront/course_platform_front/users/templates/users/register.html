@@ -1,11 +1,42 @@
-{% load static %}
+<!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="{% static 'users/register.css' %}">
-    </head>
-    <form method="POST" autocomplete="off">
-        {% csrf_token %}
-        {{registerform.as_p}}
-        <input type="submit" value="Register"/>
+<head>
+    <meta charset="utf-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="/static/users/register.css">
+</head>
+<body>
+    <h1>Register</h1>
+    <form id="register-form">
+        <input type="text" id="username" placeholder="Username" required /><br>
+        <input type="email" id="email" placeholder="Email" required /><br>
+        <input type="password" id="password" placeholder="Password" required /><br>
+        <button type="submit">Register</button>
     </form>
+
+    <script>
+        document.getElementById('register-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            const response = await fetch('http://127.0.0.1:8000/api/users/register/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ username, email, password }),
+            });
+
+            const data = await response.json();
+            if (response.ok) {
+                localStorage.setItem('token', data.token);
+                window.location.href = '/login';
+            } else {
+                alert(data.error || 'Registration failed');
+            }
+        });
+    </script>
+</body>
 </html>

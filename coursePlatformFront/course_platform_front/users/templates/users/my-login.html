@@ -1,12 +1,41 @@
-{% load static %}
+<!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="{% static 'users/my-login.css' %}">
-    </head>
-    <h1> Login here </h1>
-    <form method="POST" autocomplete="off">
-        {% csrf_token %}
-        {{loginform.as_p}}
-        <input type="submit" value="Login"/>
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="/static/users/my-login.css">
+</head>
+<body>
+    <h1>Login</h1>
+    <form id="login-form">
+        <input type="text" id="username" placeholder="Username" required /><br>
+        <input type="password" id="password" placeholder="Password" required /><br>
+        <button type="submit">Login</button>
     </form>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            const response = await fetch('http://127.0.0.1:8000/api/users/login/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ username, password }),
+            });
+
+            const data = await response.json();
+            if (response.ok) {
+                localStorage.setItem('token', data.token);
+                localStorage.setItem('username', data.username);
+                window.location.href = 'http://127.0.0.1:3333/courses/';
+            } else {
+                alert(data.error || 'Invalid credentials');
+            }
+        });
+    </script>
+</body>
 </html>

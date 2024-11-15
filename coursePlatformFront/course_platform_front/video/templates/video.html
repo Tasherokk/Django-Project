@@ -39,11 +39,23 @@
     </div>
 
 
-
     <script>
         const questions = {{ video.questions|safe }}; // Получаем вопросы из Django
+        const videoId = {{ video.id }}; // ID видео
         let currentQuestionIndex = 0; // Индекс текущего вопроса
         const answers = {}; // Объект для хранения ответов
+        const token = localStorage.getItem('token');
+
+        // Проверяем, есть ли результаты в localStorage
+        const savedResult = localStorage.getItem(`video_${videoId}_result`);
+        if (savedResult) {
+            // Если результаты найдены, показываем их и скрываем тест
+            document.getElementById('result').innerText = `Your score: ${savedResult}`;
+            document.getElementById('testForm').style.display = 'none';
+        } else {
+            // Если результатов нет, показываем тест и начинаем с первого вопроса
+            displayQuestion(currentQuestionIndex);
+        }
 
         function displayQuestion(index) {
             const questionContainer = document.getElementById('questionContainer');
@@ -52,7 +64,7 @@
             if (index < questions.length) {
                 const question = questions[index];
                 questionContainer.innerHTML = `
-                    <p>Progress ${index}/${questions.length}</p>
+                    <p>Progress ${index + 1}/${questions.length}</p>
                     <p>${question.text}</p>
                     <input type="radio" name="q${question.id}" value="1"> ${question.answer.option_1}<br>
                     <input type="radio" name="q${question.id}" value="2"> ${question.answer.option_2}<br>
@@ -71,28 +83,31 @@
             const selectedAnswer = document.querySelector(`input[name="q${questions[currentQuestionIndex].id}"]:checked`);
             if (selectedAnswer) {
                 answers[questions[currentQuestionIndex].id] = selectedAnswer.value; // Сохраняем ответ
+                currentQuestionIndex++;
+                displayQuestion(currentQuestionIndex); // Показать следующий вопрос
             }
-            currentQuestionIndex++;
-            displayQuestion(currentQuestionIndex); // Показать следующий вопрос
         });
 
         document.getElementById('testForm').addEventListener('submit', function(event) {
             event.preventDefault();  // Предотвратить стандартное поведение формы
 
-            const videoId = {{ video.id }};
             // Отправляем AJAX-запрос
             fetch(`http://127.0.0.1:8000/quiz/api/submit_test/${videoId}`, {
                 method: 'POST',
                 headers: {
+                    'Authorization': `Token ${token}`,
                     'Content-Type': 'application/json',
-                    'X-CSRFToken': '{{ csrf_token }}', // Добавьте CSRF токен
+                    'X-CSRFToken': '{{ csrf_token }}',
                 },
                 body: JSON.stringify({ answers }) // Ваши данные
             })
             .then(response => response.json())
             .then(data => {
                 if (data.score !== undefined) {
+                    // Сохраняем результат в localStorage
+                    localStorage.setItem(`video_${videoId}_result`, data.score);
                     document.getElementById('result').innerText = `Your score: ${data.score}`; // Отображаем результат
+                    document.getElementById('testForm').style.display = 'none'; // Скрываем форму теста
                 } else {
                     document.getElementById('result').innerText = 'An error occurred. Please try again.'; // Обработка ошибок
                 }
@@ -102,9 +117,76 @@
                 document.getElementById('result').innerText = 'An error occurred. Please try again.';
             });
         });
-
-        // Показать первый вопрос
-        displayQuestion(currentQuestionIndex);
     </script>
+
+
+<!--    <script>-->
+<!--        const questions = {{ video.questions|safe }}; // Получаем вопросы из Django-->
+<!--        let currentQuestionIndex = 0; // Индекс текущего вопроса-->
+<!--        const answers = {}; // Объект для хранения ответов-->
+<!--        const token = localStorage.getItem('token')-->
+
+<!--        function displayQuestion(index) {-->
+<!--            const questionContainer = document.getElementById('questionContainer');-->
+<!--            questionContainer.innerHTML = ''; // Очищаем контейнер-->
+
+<!--            if (index < questions.length) {-->
+<!--                const question = questions[index];-->
+<!--                questionContainer.innerHTML = `-->
+<!--                    <p>Progress ${index}/${questions.length}</p>-->
+<!--                    <p>${question.text}</p>-->
+<!--                    <input type="radio" name="q${question.id}" value="1"> ${question.answer.option_1}<br>-->
+<!--                    <input type="radio" name="q${question.id}" value="2"> ${question.answer.option_2}<br>-->
+<!--                    <input type="radio" name="q${question.id}" value="3"> ${question.answer.option_3}<br>-->
+<!--                    <input type="radio" name="q${question.id}" value="4"> ${question.answer.option_4}<br>-->
+<!--                `;-->
+<!--            } else {-->
+<!--                // Если все вопросы пройдены, показываем кнопку отправки-->
+<!--                document.getElementById('nextButton').style.display = 'none';-->
+<!--                document.getElementById('submitButton').style.display = 'inline';-->
+<!--            }-->
+<!--        }-->
+
+<!--        document.getElementById('nextButton').addEventListener('click', function() {-->
+<!--            // Получаем ответ на текущий вопрос-->
+<!--            const selectedAnswer = document.querySelector(`input[name="q${questions[currentQuestionIndex].id}"]:checked`);-->
+<!--            if (selectedAnswer) {-->
+<!--                answers[questions[currentQuestionIndex].id] = selectedAnswer.value; // Сохраняем ответ-->
+<!--            }-->
+<!--            currentQuestionIndex++;-->
+<!--            displayQuestion(currentQuestionIndex); // Показать следующий вопрос-->
+<!--        });-->
+
+<!--        document.getElementById('testForm').addEventListener('submit', function(event) {-->
+<!--            event.preventDefault();  // Предотвратить стандартное поведение формы-->
+
+<!--            const videoId = {{ video.id }};-->
+<!--            // Отправляем AJAX-запрос-->
+<!--            fetch(`http://127.0.0.1:8000/quiz/api/submit_test/${videoId}`, {-->
+<!--                method: 'POST',-->
+<!--                headers: {-->
+<!--                    'Authorization': `Token ${token}`,-->
+<!--                    'Content-Type': 'application/json',-->
+<!--                    'X-CSRFToken': '{{ csrf_token }}', // Добавьте CSRF токен-->
+<!--                },-->
+<!--                body: JSON.stringify({ answers }) // Ваши данные-->
+<!--            })-->
+<!--            .then(response => response.json())-->
+<!--            .then(data => {-->
+<!--                if (data.score !== undefined) {-->
+<!--                    document.getElementById('result').innerText = `Your score: ${data.score}`; // Отображаем результат-->
+<!--                } else {-->
+<!--                    document.getElementById('result').innerText = 'An error occurred. Please try again.'; // Обработка ошибок-->
+<!--                }-->
+<!--            })-->
+<!--            .catch(error => {-->
+<!--                console.error('Error:', error);-->
+<!--                document.getElementById('result').innerText = 'An error occurred. Please try again.';-->
+<!--            });-->
+<!--        });-->
+
+<!--        // Показать первый вопрос-->
+<!--        displayQuestion(currentQuestionIndex);-->
+<!--    </script>-->
 
 {% endblock content %}

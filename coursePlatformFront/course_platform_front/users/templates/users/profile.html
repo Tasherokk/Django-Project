@@ -1,22 +1,65 @@
-{% extends './base.html' %}
-{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Profile</title>
+    <link rel="stylesheet" href="/static/users/profile.css">
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-4" id="profile-picture">
+        </div>
+        <div class="col-md-8">
+            <h2 id="profile-username">Username</h2>
+            <p id="profile-bio">Bio</p>
+            <button id="edit-profile-button" style="display: none;">Edit Profile</button>
+            <button id="courses-button">Courses</button>
+        </div>
+    </div>
+    <hr>
 
-{% block content %}
-<div class="row">
-    <div class="col-md-4">
-        {% if profile.profile_picture %}
-            <img src="{{ profile.profile_picture.url }}" class="img-thumbnail" alt="Profile Picture">
-        {% else %}
-            <img src="{% static 'images/default_profile.png' %}" class="img-thumbnail" alt="Default Profile Picture">
-        {% endif %}
-    </div>
-    <div class="col-md-8">
-        <h2>{{ profile_user.username }}</h2>
-        <p>{{ profile.bio }}</p>
-        {% if user == profile_user %}
-            <a href="{% url 'users:edit_profile' %}" class="btn btn-secondary mt-2">Edit Profile</a>
-        {% endif %}
-    </div>
-</div>
-<hr>
-{% endblock %}
+    <script>
+        window.addEventListener('DOMContentLoaded', async () => {
+            const token = localStorage.getItem('token');
+            const username = localStorage.getItem('username');
+
+            if (!token || !username) {
+                window.location.href = '/login';
+                return;
+            }
+
+            const response = await fetch(`http://127.0.0.1:8000/api/users/profile/${username}/`, {
+                headers: {
+                    'Authorization': `Token ${token}`,
+                },
+            });
+
+            const data = await response.json();
+            if (response.ok) {
+                document.getElementById('profile-username').textContent = data.user.username;
+                document.getElementById('profile-bio').textContent = data.bio;
+                const profilePictureDiv = document.getElementById('profile-picture');
+                if (data.profile_picture) {
+                    profilePictureDiv.innerHTML = `<img src="${data.profile_picture}" class="img-thumbnail" alt="Profile Picture">`;
+                } else {
+                    profilePictureDiv.innerHTML = `<img src="/static/images/default_profile.png" class="img-thumbnail" alt="Default Profile Picture">`;
+                }
+
+                if (data.user.username === username) {
+                    document.getElementById('edit-profile-button').style.display = 'block';
+                    document.getElementById('edit-profile-button').addEventListener('click', () => {
+                        window.location.href = '/edit_profile';
+                    });
+                }
+
+                document.getElementById('courses-button').addEventListener('click', () => {
+                    window.location.href = '/courses/';
+                });
+
+            } else {
+                alert('Failed to load profile');
+            }
+        });
+    </script>
+</body>
+</html>
