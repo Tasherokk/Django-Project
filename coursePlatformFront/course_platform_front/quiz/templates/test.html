@@ -19,11 +19,30 @@
     <div id="resultContainer" style="display:none; text-align: center; font-size: 24px; padding: 50px;"></div>
 
     <script>
+        console.log("Script loaded");
+
         let questions = [];
         let currentQuestionIndex = 0;
 
-        async function loadTest() {
-            const response = await fetch('http://localhost:8000/test/');
+        document.addEventListener('DOMContentLoaded', () => {
+            const token = localStorage.getItem('token');
+            console.log(`Token: ${token}`);
+
+            if (!token) {
+                alert("Authentication required. Please log in.");
+                window.location.href = '/login';
+            } else {
+                loadTest(token);  // Pass token to the loadTest function
+            }
+        });
+
+        async function loadTest(token) {
+            const response = await fetch('http://localhost:8000/test/', {
+                headers: {
+                    'Authorization': `Token ${token}`,
+                    'Content-Type': 'application/json'
+                }
+            });
             questions = await response.json();
 
             // Показать первый вопрос после загрузки
@@ -82,13 +101,14 @@
             saveCurrentAnswer();
 
             const answers = {};
+            const token = localStorage.getItem('token');
             questions.forEach(question => {
-                answers[question.id] = question.selectedAnswer;  // Сохранение всех выбранных ответов
+                answers[question.id] = question.selectedAnswer;
             });
-
             const response = await fetch('http://localhost:8000/submit/', {
                 method: 'POST',
                 headers: {
+                    'Authorization': `Token ${token}`,
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({answers}),
@@ -96,13 +116,10 @@
 
             const result = await response.json();
 
-            // Скрываем тест и показываем результат
             document.getElementById('testForm').style.display = 'none';
             document.getElementById('resultContainer').style.display = 'block';
             document.getElementById('resultContainer').innerHTML = `<h1>Your score is: ${result.score}</h1>`;
         });
-
-        loadTest();  // Загружаем тест при загрузке страницы
     </script>
 </body>
 </html>

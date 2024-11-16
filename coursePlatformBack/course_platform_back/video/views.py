@@ -2,6 +2,8 @@ from django.http import JsonResponse, StreamingHttpResponse
 from django.shortcuts import get_object_or_404
 from quiz.models import Question  # Импортируй модель вопроса
 from quiz.models import Test
+from rest_framework.decorators import permission_classes
+from rest_framework.permissions import IsAuthenticated
 
 from .models import Video
 from .services import open_file
@@ -14,8 +16,8 @@ def get_list_video(request, topic_id):
     return JsonResponse(list(videos), safe=False)
 
 
+# @permission_classes([IsAuthenticated])
 def get_video(request, pk: int):
-
     _video = get_object_or_404(Video, id=pk)
     test = get_object_or_404(Test, video=_video)
     questions = test.questions.prefetch_related("answer").all()
