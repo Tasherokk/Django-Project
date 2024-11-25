@@ -32,7 +32,6 @@ INSTALLED_APPS = [
     "course",
     'rest_framework',
     'rest_framework.authtoken',
-    'users'
 ]
 
 MIDDLEWARE = [
