@@ -26,7 +26,6 @@ urlpatterns = [
     path("video/", include("video.urls")),
     path("quiz/", include("quiz.urls")),
     path("course/", include("course.urls")),
-
     path('', include('users.urls')),
 ]
 

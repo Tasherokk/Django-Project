@@ -2,164 +2,21 @@
 {% load static %}
 
 {% block content %}
-    <link rel="stylesheet" type="text/css" href="{% static 'courses/courses.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'courses/courses.css' %}">
 
-    <!-- Course Details -->
-    <h1 id="course-title">Loading Course...</h1>
-    <p id="course-description">Please wait while the course details load.</p>
+    <h1>Topics in Course</h1>
 
-    <h2>Topics in Course</h2>
+<div class="container">
+    <ul>
 
-    <div class="container">
-        <ul>
-            {% for topic in topics %}
-                <li>
-                    <a href="{% url 'videos' pk=pk topic_id=topic.id %}">{{ topic.title }}</a>
-                    <p>{{ topic.description }}</p>
-                </li>
-            {% empty %}
-                <li>No topics available for this course.</li>
-            {% endfor %}
-        </ul>
-    </div>
+        {% for topic in topics %}
+            <li>
+                <a href="{% url 'videos' pk=pk topic_id=topic.id %}">{{ topic.title }}</a>
+                <p>{{ topic.description }}</p>
+            </li>
 
-    <!-- Comments Section -->
-    <h2>Comments</h2>
-    <div id="comments-section">
-        <ul id="comments-list">
-            <!-- Comments will be dynamically inserted here -->
-        </ul>
-    </div>
+        {% endfor %}
+    </ul>
+</div>
 
-    <div id="add-comment-section">
-        <h3>Add a Comment</h3>
-        <textarea id="comment-content" rows="4" cols="50" placeholder="Write your comment here..."></textarea><br>
-        <button id="submit-comment-button">Submit Comment</button>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', async () => {
-            const token = localStorage.getItem('token');
-            const courseId = {{ course.id| default:'null' }}; // Safeguard against undefined course
-
-            if (courseId === null) {
-                alert('Invalid course ID.');
-                return;
-            }
-
-            // Fetch and display the course details
-            async function loadCourse() {
-                try {
-                    const response = await fetch(`http://127.0.0.1:8000/course/api/courses/${courseId}/`, {
-                        headers: {
-                            'Authorization': `Token ${token}`,
-                        },
-                    });
-
-                    if (response.ok) {
-                        const data = await response.json();
-                        document.getElementById('course-title').textContent = data.title;
-                        document.getElementById('course-description').textContent = data.description;
-                    } else {
-                        document.getElementById('course-title').textContent = 'Error Loading Course';
-                        document.getElementById('course-description').textContent = 'Unable to load course details.';
-                    }
-                } catch (error) {
-                    console.error('Error fetching course:', error);
-                    document.getElementById('course-title').textContent = 'Error Loading Course';
-                    document.getElementById('course-description').textContent = 'Unable to load course details.';
-                }
-            }
-
-            // Fetch and display comments
-            async function loadComments() {
-                try {
-                    const response = await fetch(`http://127.0.0.1:8000/course/api/courses/${courseId}/comments/`, {
-                        headers: {
-                            'Authorization': `Token ${token}`,
-                        },
-                    });
-
-                    if (response.ok) {
-                        const comments = await response.json();
-                        const commentsList = document.getElementById('comments-list');
-                        commentsList.innerHTML = '';
-
-                        if (comments.length === 0) {
-                            commentsList.innerHTML = '<li>No comments yet. Be the first to comment!</li>';
-                            return;
-                        }
-
-                        comments.forEach(comment => {
-                            const commentItem = document.createElement('li');
-                            commentItem.innerHTML = `
-                                <div class="comment">
-                                    <strong>${escapeHtml(comment.author)}</strong> <em>${new Date(comment.created_at).toLocaleString()}</em>
-                                    <p>${escapeHtml(comment.content)}</p>
-                                </div>
-                                <hr>
-                            `;
-                            commentsList.appendChild(commentItem);
-                        });
-                    } else {
-                        alert('Failed to load comments.');
-                    }
-                } catch (error) {
-                    console.error('Error fetching comments:', error);
-                }
-            }
-
-            // Submit a new comment
-            async function submitComment() {
-                const content = document.getElementById('comment-content').value.trim();
-                if (!content) {
-                    alert('Comment content cannot be empty.');
-                    return;
-                }
-
-                try {
-                    const response = await fetch(`http://127.0.0.1:8000/course/api/courses/${courseId}/comments/`, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Authorization': `Token ${token}`,
-                        },
-                        body: JSON.stringify({ content,course: courseId }),
-                    });
-                    if (response.ok) {
-                        document.getElementById('comment-content').value = '';
-                        loadComments(); // Refresh comments
-                    } else {
-                        const errorData = await response.json();
-                        alert('Failed to submit comment: ' + (errorData.content ? errorData.content.join(', ') : 'Unknown error'));
-                    }
-                } catch (error) {
-                    console.error('Error submitting comment:', error);
-                }
-            }
-
-            // Escape HTML to prevent XSS
-            function escapeHtml(text) {
-                const map = {
-                    '&': '&amp;',
-                    '<': '&lt;',
-                    '>': '&gt;',
-                    '"': '&quot;',
-                    "'": '&#039;'
-                };
-                return text.replace(/[&<>"']/g, function(m) { return map[m]; });
-            }
-
-            // Initialize the page
-            if (!token) {
-                alert('You must be logged in to view this page.');
-                window.location.href = '/login/';
-            } else {
-                await loadCourse();
-                await loadComments();
-
-                document.getElementById('submit-comment-button').addEventListener('click', submitComment);
-            }
-        });
-    </script>
 {% endblock content %}
