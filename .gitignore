@@ -1,2 +1,3 @@
 courseenv/
 __pycache__/
+.env
