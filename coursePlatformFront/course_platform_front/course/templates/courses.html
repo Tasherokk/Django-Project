@@ -1,0 +1,28 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'courses/courses.css' %}">
+
+    <a href="{% url 'user-logout' %}" > Logout here </a>
+
+
+    <h1>Available Courses</h1>
+
+<div class="container">
+    <!-- Список курсов -->
+    <ul>
+        {% for course in course_list %}
+            <li>
+                <a href="{% url 'topics' course.id %}">{{ course.title }}</a>  <!-- Ссылка на темы курса -->
+                <p>{{ course.description }}</p>
+                <small>Created on: {{ course.created_at }}</small>
+                <br>
+                <br>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock content %}

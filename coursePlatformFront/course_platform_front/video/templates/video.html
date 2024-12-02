@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'videos/videos.css' %}">
+
+    <div class="container">
+        <div class="row">
+            <h2>Preview</h2>
+            <img width="500px" class="preview" src="{{ video.image }}" alt="">
+            <h4><a href="http://127.0.0.1:8000/video/api/stream/{{ video.id }}/">Watch on Full Screen</a></h4>
+            <p>{{ video.description }}</p>
+        </div>
+
+        <!-- Секция теста -->
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <h3>Test for this video</h3>
+
+                <form id="testForm">
+                    {% if video.questions %}
+                        <div id="questionContainer">
+                            <!-- Вопрос будет отображаться здесь -->
+                        </div>
+                        <br>
+                        <button type="button" id="nextButton">Next Question</button>
+                        <button type="submit" style="display: none;" id="submitButton">Submit Test</button>
+                    {% else %}
+                        <p>No questions available for this video.</p>
+                    {% endif %}
+                </form>
+
+            </div>
+
+            <br>
+            <div id="result"></div>  <!-- Элемент для отображения результата -->
+
+        </div>
+    </div>
+
+
+
+    <script>
+        const questions = {{ video.questions|safe }}; // Получаем вопросы из Django
+        let currentQuestionIndex = 0; // Индекс текущего вопроса
+        const answers = {}; // Объект для хранения ответов
+
+        function displayQuestion(index) {
+            const questionContainer = document.getElementById('questionContainer');
+            questionContainer.innerHTML = ''; // Очищаем контейнер
+
+            if (index < questions.length) {
+                const question = questions[index];
+                questionContainer.innerHTML = `
+                    <p>Progress ${index}/${questions.length}</p>
+                    <p>${question.text}</p>
+                    <input type="radio" name="q${question.id}" value="1"> ${question.answer.option_1}<br>
+                    <input type="radio" name="q${question.id}" value="2"> ${question.answer.option_2}<br>
+                    <input type="radio" name="q${question.id}" value="3"> ${question.answer.option_3}<br>
+                    <input type="radio" name="q${question.id}" value="4"> ${question.answer.option_4}<br>
+                `;
+            } else {
+                // Если все вопросы пройдены, показываем кнопку отправки
+                document.getElementById('nextButton').style.display = 'none';
+                document.getElementById('submitButton').style.display = 'inline';
+            }
+        }
+
+        document.getElementById('nextButton').addEventListener('click', function() {
+            // Получаем ответ на текущий вопрос
+            const selectedAnswer = document.querySelector(`input[name="q${questions[currentQuestionIndex].id}"]:checked`);
+            if (selectedAnswer) {
+                answers[questions[currentQuestionIndex].id] = selectedAnswer.value; // Сохраняем ответ
+            }
+            currentQuestionIndex++;
+            displayQuestion(currentQuestionIndex); // Показать следующий вопрос
+        });
+
+        document.getElementById('testForm').addEventListener('submit', function(event) {
+            event.preventDefault();  // Предотвратить стандартное поведение формы
+
+            const videoId = {{ video.id }};
+            // Отправляем AJAX-запрос
+            fetch(`http://127.0.0.1:8000/quiz/api/submit_test/${videoId}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': '{{ csrf_token }}', // Добавьте CSRF токен
+                },
+                body: JSON.stringify({ answers }) // Ваши данные
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.score !== undefined) {
+                    document.getElementById('result').innerText = `Your score: ${data.score}`; // Отображаем результат
+                } else {
+                    document.getElementById('result').innerText = 'An error occurred. Please try again.'; // Обработка ошибок
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('result').innerText = 'An error occurred. Please try again.';
+            });
+        });
+
+        // Показать первый вопрос
+        displayQuestion(currentQuestionIndex);
+    </script>
+
+{% endblock content %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'videos/videos.css' %}">
+
+    {% if video_list %}
+    {% for video in video_list %}
+    <div class="container">
+                <div class="row">
+                    <h4>{{ video.title }}</h4>
+                    <a href="{% url 'video_detail' pk=pk topic_id=topic_id video_id=video.id %}">
+                        <img width="500px" src="http://127.0.0.1:8000/media/{{ video.image }}" alt="">
+                    </a>
+        <!--                    <span class="date">{{ video.create_at }}</span>-->
+        <!--                    <p>{{ video.description }}</p>-->
+                </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    <p>No available videos!</p>
+    {% endif %}
+
+{% endblock content %}
