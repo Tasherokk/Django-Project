@@ -6,12 +6,16 @@ from .models import ConversationHistory
 from .serializers import ConversationHistorySerializer, UpdateAssistantResponseSerializer, CreateAssistantSerializer
 from llama_index.agent.openai import OpenAIAssistantAgent
 from rest_framework import viewsets, permissions, filters
+from rest_framework_simplejwt.authentication import JWTAuthentication
+
 
 
 
 # Создание нового взаимодействия с ассистентом
 class CreateAssistantView(viewsets.ViewSet):
     serializer_class = CreateAssistantSerializer
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [permissions.AllowAny]
 
     def create(self, request):
         try:
@@ -45,6 +49,8 @@ class CreateAssistantView(viewsets.ViewSet):
 # Обновление состояния ассистента и получение ответа
 class UpdateAssistantResponseView(viewsets.ViewSet):
     serializer_class = UpdateAssistantResponseSerializer
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [permissions.AllowAny]
 
     def create(self, request):
         try:
@@ -79,6 +85,8 @@ class UpdateAssistantResponseView(viewsets.ViewSet):
 
 # Миксин для работы с историей
 class ConversationHistoryViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [permissions.AllowAny]
     queryset = ConversationHistory.objects.all()
     serializer_class = ConversationHistorySerializer
 

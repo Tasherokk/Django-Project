@@ -13,6 +13,7 @@ from django.contrib.auth import authenticate
 class RegisterView(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = RegisterSerializer
+    authentication_classes = [TokenAuthentication]
     permission_classes = [permissions.AllowAny]
 
     def create(self, request, *args, **kwargs):
@@ -24,6 +25,7 @@ class RegisterView(generics.CreateAPIView):
 
 
 class LoginView(APIView):
+    authentication_classes = [TokenAuthentication]
     permission_classes = [permissions.AllowAny]
 
     def post(self, request):
@@ -37,6 +39,7 @@ class LoginView(APIView):
 
 
 class LogoutView(APIView):
+    authentication_classes = [TokenAuthentication]
     permission_classes = [permissions.IsAuthenticated]
 
     def post(self, request):
@@ -45,6 +48,7 @@ class LogoutView(APIView):
 
 
 class ProfileView(generics.RetrieveAPIView):
+    authentication_classes = [TokenAuthentication]
     permission_classes = [permissions.IsAuthenticated]
     serializer_class = ProfileSerializer
     queryset = Profile.objects.all()
