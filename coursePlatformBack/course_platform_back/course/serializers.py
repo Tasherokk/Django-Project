@@ -8,7 +8,7 @@ class CommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comment
         fields = ['id', 'course', 'author', 'content', 'created_at']
-        read_only_fields = ['id', 'author', 'created_at']
+        read_only_fields = ['id', 'course', 'author', 'created_at']
 
 class TopicSerializer(serializers.ModelSerializer):
     class Meta:
@@ -20,4 +20,5 @@ class CourseSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Topic
-        fields = ['id', 'title', 'description', 'craeted_at','comments']
+        fields = ['id', 'course', 'author', 'content', 'created_at']
+        read_only_fields = ['id', 'course', 'author', 'created_at']

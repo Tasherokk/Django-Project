@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8">
     <title>Homepage</title>
-    <link rel="stylesheet" href="/static/users/home.css">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'users/home.css' %}?v=1.0">
 </head>
 <body>
     <div class="container">

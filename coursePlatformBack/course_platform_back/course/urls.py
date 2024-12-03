@@ -1,6 +1,7 @@
 # urls.py
 from django.urls import path
-from .views import get_courses, get_topics, get_videos,get_course,CommentListCreateAPIView,CommentDetailAPIView
+from .views import (get_courses, get_topics, get_videos, get_course, CommentListCreateAPIView, CommentDetailAPIView,
+                    DeleteCommentView)
 
 urlpatterns = [
     path("api/courses/", get_courses, name="get_courses"),
@@ -14,5 +15,6 @@ urlpatterns = [
     ),
     path("api/courses/<int:course_id>/comments/",CommentListCreateAPIView.as_view(), name='comment-list-create'),
     path("api/courses/<int:course_id>/comments/<int:comment_id>", CommentDetailAPIView.as_view(), name='comment-detail'),
+    path('api/comments/<int:comment_id>/', DeleteCommentView.as_view(), name='delete_comment'),
 
 ]

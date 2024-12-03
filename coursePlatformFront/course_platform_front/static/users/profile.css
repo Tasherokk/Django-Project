@@ -1,0 +1,55 @@
+/* Контейнер для кнопок */
+.top-buttons {
+    display: flex;
+    justify-content: flex-end; /* Выравнивание кнопок справа */
+    align-items: center;
+    gap: 10px; /* Расстояние между кнопками */
+    padding: 10px 20px; /* Отступы для пространства вокруг кнопок */
+    background-color: #f8f9fa; /* Светлый фон для контраста */
+    border-bottom: 2px solid #e9ecef; /* Разделительная линия внизу */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Легкая тень */
+}
+
+/* Общие стили для кнопок */
+button {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 14px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для кнопки Profile */
+#profile-button {
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    color: white;
+}
+
+#profile-button:hover {
+    background: linear-gradient(45deg, #2575fc, #6a11cb);
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(102, 51, 153, 0.4);
+}
+
+/* Стили для кнопки Logout */
+#logout-button {
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    color: white;
+}
+
+#logout-button:hover {
+    background: linear-gradient(45deg, #ff4b2b, #ff416c);
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(255, 65, 108, 0.4);
+}
+
+/* Общие эффекты для нажатия */
+button:active {
+    transform: scale(0.95);
+    box-shadow: none;
+}

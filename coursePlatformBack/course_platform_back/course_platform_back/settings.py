@@ -198,3 +198,4 @@ SESSION_SAVE_EVERY_REQUEST = True
 
 # Сессия удаляется после закрытия браузера
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+

@@ -1,5 +1,7 @@
 # views.py
+from django.contrib.auth.decorators import login_required, user_passes_test
 from django.http import JsonResponse
+from rest_framework.exceptions import NotFound
 from video.models import Video
 from .models import Course, Topic  # Предположим, у вас есть модели Course и Topic
 from rest_framework import generics, permissions
@@ -14,6 +16,8 @@ logger = logging.getLogger('platform')
 class CommentListCreateAPIView(generics.ListCreateAPIView):
     serializer_class = CommentSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    lookup_field = 'id'  # This is the model field name (default is 'id')
+    lookup_url_kwarg = 'comment_id'  # This is the URL keyword argument
 
     def get_queryset(self):
         course_id = self.kwargs['course_id']
@@ -29,11 +33,13 @@ class CommentListCreateAPIView(generics.ListCreateAPIView):
             logger.info("Comment created successfully")
         except Course.DoesNotExist:
             logger.error(f"Course with ID {course_id} not found")
-            raise
+            raise NotFound("Course not found")
 
 class CommentDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = CommentSerializer
     permission_classes = [IsAuthorOrReadOnly]
+    lookup_field = 'id'  # Model field name
+    lookup_url_kwarg = 'comment_id'  # URL keyword argument
 
     def get_queryset(self):
         course_id = self.kwargs['course_id']
@@ -95,7 +101,7 @@ def get_topics(request, course_id):
         return JsonResponse({"error": str(e)}, status=500)
 
 
-def get_videos(request, topic_id):
+def get_videos(request, course_id, topic_id):
     logger.info(f"Fetching videos for topic ID: {topic_id}")
     try:
         videos = Video.objects.filter(topic_id=topic_id).values(
@@ -107,3 +113,34 @@ def get_videos(request, topic_id):
     except Exception as e:
         logger.error(f"Error fetching videos for topic ID {topic_id}: {e}")
         return JsonResponse({"error": str(e)}, status=500)
+
+
+# @login_required
+# @user_passes_test(lambda u: u.is_staff)
+# def delete_comment(request, comment_id):
+#     if request.method == 'DELETE':
+#         try:
+#             comment = Comment.objects.get(id=comment_id)
+#             comment.delete()
+#             return JsonResponse({'message': 'Comment deleted successfully.'})
+#         except Comment.DoesNotExist:
+#             return JsonResponse({'error': 'Comment not found.'}, status=404)
+#     else:
+#         return JsonResponse({'error': 'Invalid request method.'}, status=405)
+
+# Import necessary DRF classes
+from rest_framework.views import APIView
+from rest_framework.permissions import IsAdminUser
+from rest_framework.response import Response
+from rest_framework import status
+
+class DeleteCommentView(APIView):
+    permission_classes = [IsAdminUser]
+
+    def delete(self, request, comment_id):
+        try:
+            comment = Comment.objects.get(id=comment_id)
+            comment.delete()
+            return Response({'message': 'Comment deleted successfully.'}, status=status.HTTP_200_OK)
+        except Comment.DoesNotExist:
+            return Response({'error': 'Comment not found.'}, status=status.HTTP_404_NOT_FOUND)

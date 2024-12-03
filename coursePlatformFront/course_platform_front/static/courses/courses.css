@@ -1,0 +1,79 @@
+/* courses/courses.css */
+
+/* Основные стили */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+/* Заголовок страницы */
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin: 20px 0;
+    color: #333;
+}
+
+/* Контейнер списка курсов */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Список курсов */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+ul li:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+/* Ссылки */
+ul li a {
+    text-decoration: none;
+    font-size: 1.2em;
+    color: #007bff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+ul li a:hover {
+    color: #0056b3;
+}
+
+/* Описание курса */
+ul li p {
+    font-size: 1em;
+    color: #666;
+    margin: 5px 0 10px;
+}
+
+/* Дата создания */
+ul li small {
+    font-size: 0.9em;
+    color: #999;
+}
+
+/* Отступы и форматирование для страницы */
+br {
+    line-height: 1.5;
+}

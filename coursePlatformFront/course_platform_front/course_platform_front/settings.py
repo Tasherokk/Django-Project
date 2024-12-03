@@ -62,7 +62,9 @@ ROOT_URLCONF = "course_platform_front.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [os.path.join(BASE_DIR, "course_platform_front/templates"), os.path.join(BASE_DIR, 'users/templates')],
+        "DIRS": [os.path.join(BASE_DIR, "course_platform_front/templates"), os.path.join(BASE_DIR, 'users/templates')
+                 , os.path.join(BASE_DIR, 'course/templates'), os.path.join(BASE_DIR, 'quiz/templates')
+                 , os.path.join(BASE_DIR, 'video/templates')],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -76,6 +78,9 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "course_platform_front.wsgi.application"
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 
 
 # Database

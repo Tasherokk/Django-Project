@@ -3,6 +3,7 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.generics import get_object_or_404
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
+from rest_framework.exceptions import NotFound
 from video.models import Video
 
 from .models import Question, Test
@@ -11,12 +12,15 @@ import logging
 logger = logging.getLogger('platform')
 
 
-
+@api_view(["GET"])
 @permission_classes([IsAuthenticated])
 def get_test_for_video(request, video_id: int):
     logger.info(f"Fetching test for video ID: {video_id}")
     try:
-        test = get_object_or_404(Test, video_id=video_id)
+        try:
+            test = get_object_or_404(Test, video_id=video_id)
+        except Test.DoesNotExist:
+            raise NotFound({'error': 'Test not found'})
         questions = test.questions.prefetch_related("answer").all()
         logger.debug(f"Found {len(questions)} questions for video ID {video_id}")
         question_data = []

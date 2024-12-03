@@ -1,6 +1,10 @@
+from django.contrib.auth.decorators import login_required, user_passes_test
+from django.http import JsonResponse
 from rest_framework import generics, permissions
 from django.contrib.auth.models import User
 from rest_framework.authentication import TokenAuthentication
+from rest_framework.decorators import permission_classes
+from rest_framework.permissions import IsAuthenticated
 
 from .models import Profile
 from .serializers import UserSerializer, ProfileSerializer, RegisterSerializer
@@ -10,12 +14,13 @@ from rest_framework.views import APIView
 from django.contrib.auth import authenticate
 from django.contrib.auth import logout
 
+from course.models import Comment
+
 
 class RegisterView(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = RegisterSerializer
-    authentication_classes = [TokenAuthentication]
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.AllowAny]
 
     def create(self, request, *args, **kwargs):
         response = super().create(request, *args, **kwargs)
@@ -66,3 +71,10 @@ class EditProfileView(generics.UpdateAPIView):
     authentication_classes = [TokenAuthentication]
     permission_classes = [permissions.IsAuthenticated]
     queryset = Profile.objects.all()
+
+
+@permission_classes([IsAuthenticated])
+class UserDetailsView(APIView):
+    def get(self, request):
+        serializer = UserSerializer(request.user)
+        return Response(serializer.data)

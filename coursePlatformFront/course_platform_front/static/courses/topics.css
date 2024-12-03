@@ -1,0 +1,151 @@
+/* courses/courses.css */
+
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    color: #444;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Course Details */
+#course-title {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+#course-description {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    margin-bottom: 30px;
+}
+
+/* Topics List */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background: #ecf0f1;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #2980b9;
+    font-size: 1.1em;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+    color: #3498db;
+}
+
+/* Comments Section */
+#comments-section {
+    margin-top: 40px;
+}
+
+.comment {
+    margin-bottom: 20px;
+}
+
+.comment strong {
+    font-size: 1em;
+    color: #34495e;
+}
+
+.comment em {
+    font-size: 0.9em;
+    color: #95a5a6;
+}
+
+.comment p {
+    margin: 5px 0;
+    font-size: 1em;
+    color: #555;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #eee;
+}
+
+/* Buttons */
+button {
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #3498db;
+}
+
+button.delete-comment-button {
+    background-color: #e74c3c;
+    margin-left: 10px;
+}
+
+button.delete-comment-button:hover {
+    background-color: #c0392b;
+}
+
+/* Comment Form */
+#add-comment-section textarea {
+    width: calc(100% - 30px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+    font-size: 1em;
+}
+
+#add-comment-section button {
+    display: block;
+    width: 100%;
+    font-size: 1.1em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    h1, h2 {
+        font-size: 1.5em;
+    }
+
+    ul li a {
+        font-size: 1em;
+    }
+}

@@ -1,0 +1,120 @@
+/* videos/videos.css */
+
+/* Основной стиль для контейнера */
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+/* Заголовки */
+h2, h3 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h4 {
+    font-size: 1.2em;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Стили для описания видео */
+img.preview {
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    max-width: 100%;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+img.preview:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Ссылка на полный экран */
+a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Текст описания видео */
+p {
+    color: #666;
+    font-size: 1em;
+    line-height: 1.6;
+    margin: 15px 0;
+}
+
+/* Стили для теста */
+form {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form p {
+    font-size: 1em;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Результат теста */
+#result {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e7f7e4;
+    border: 1px solid #c3e6cb;
+    border-radius: 8px;
+    color: #155724;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+/* Для прогресса */
+#questionContainer p:first-child {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
