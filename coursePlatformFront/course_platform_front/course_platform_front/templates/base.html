@@ -1,5 +1,5 @@
-{% load static %}
 <!DOCTYPE html>
+{% load static %}
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -356,6 +356,10 @@ body.show-emoji-picker em-emoji-picker {
 
 <body>
 
+  <button id="profile-button">Profile</button>
+
+  <button id="logout-button">Logout</button>
+
 <!--<div id="loader-wrapper">-->
 <!--  <div id="loader"></div>-->
 <!--</div>-->
@@ -620,6 +624,47 @@ body.show-emoji-picker em-emoji-picker {
   document.querySelector("#file-upload").addEventListener("click", () => fileInput.click());
   closeChatbot.addEventListener("click", () => document.body.classList.remove("show-chatbot"));
   chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
+
+
+  function updateNav() {
+          const token = localStorage.getItem('token');
+          if (token) {
+              document.getElementById('logout-button').style.display = 'block';
+          } else {
+              document.getElementById('logout-button').style.display = 'none';
+          }
+      }
+
+     document.addEventListener('DOMContentLoaded', () => {
+          const token = localStorage.getItem('token');
+          if (!token) {
+              window.location.href = '/';
+          } else {
+              updateNav();
+          }
+      });
+
+     document.getElementById('profile-button').addEventListener('click', () => {
+          window.location.href = '/profile';
+      });
+
+    document.getElementById('logout-button').addEventListener('click', async () => {
+        const token = localStorage.getItem('token');
+        const response = await fetch('http://127.0.0.1:8000/api/users/logout/', {
+            method: 'POST',
+            headers: {
+                'Authorization': `Token ${token}`,
+            },
+        });
+
+        if (response.status === 204) {
+            localStorage.removeItem('token');
+            localStorage.removeItem('username');
+            window.location.href = '/';
+        } else {
+            alert('Logout failed');
+        }
+    });
   
 </script>
 
@@ -630,4 +675,4 @@ body.show-emoji-picker em-emoji-picker {
 </body>
 
 
-</html>
+<!--</html>-->

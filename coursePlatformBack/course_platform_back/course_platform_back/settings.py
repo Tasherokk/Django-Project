@@ -34,6 +34,8 @@ INSTALLED_APPS = [
     "course",
     "corsheaders",
     "chatgpt_agent",
+    "rest_framework.authtoken",
+    "users"
 ]
 
 MIDDLEWARE = [

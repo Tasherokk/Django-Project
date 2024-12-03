@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     "quiz",
     "course",
     "users",
+    "crispy_forms",
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -60,7 +62,7 @@ ROOT_URLCONF = "course_platform_front.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [os.path.join(BASE_DIR, "course_platform_front/templates")],
+        "DIRS": [os.path.join(BASE_DIR, "course_platform_front/templates"), os.path.join(BASE_DIR, 'users/templates')],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -132,3 +134,12 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+CORS_ALLOW_HEADERS = [
+    'Authorization',
+    'Content-Type',
+    'X-CSRFToken',
+]
+
+CORS_ALLOW_CREDENTIALS = True
+
