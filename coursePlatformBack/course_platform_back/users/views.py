@@ -8,13 +8,14 @@ from rest_framework.authtoken.models import Token
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from django.contrib.auth import authenticate
+from django.contrib.auth import logout
 
 
 class RegisterView(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = RegisterSerializer
     authentication_classes = [TokenAuthentication]
-    permission_classes = [permissions.AllowAny]
+    permission_classes = [permissions.IsAuthenticated]
 
     def create(self, request, *args, **kwargs):
         response = super().create(request, *args, **kwargs)
@@ -25,7 +26,6 @@ class RegisterView(generics.CreateAPIView):
 
 
 class LoginView(APIView):
-    authentication_classes = [TokenAuthentication]
     permission_classes = [permissions.AllowAny]
 
     def post(self, request):
@@ -34,16 +34,21 @@ class LoginView(APIView):
         user = authenticate(username=username, password=password)
         if user:
             token, created = Token.objects.get_or_create(user=user)
+
+            from django.contrib.auth import login
+            login(request, user)
+
             return Response({'token': token.key, 'username': username})
         return Response({'error': 'Invalid Credentials'}, status=400)
 
 
 class LogoutView(APIView):
-    authentication_classes = [TokenAuthentication]
     permission_classes = [permissions.IsAuthenticated]
 
     def post(self, request):
         request.user.auth_token.delete()
+        # Завершаем сессию
+        logout(request)
         return Response(status=204)
 
 

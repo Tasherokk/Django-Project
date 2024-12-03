@@ -1,0 +1,146 @@
+INFO 2024-12-03 23:56:24,707 autoreload Watching for file changes with StatReloader
+INFO 2024-12-03 23:56:48,440 basehttp "OPTIONS /api/users/login/ HTTP/1.1" 200 0
+INFO 2024-12-03 23:56:48,841 basehttp "POST /api/users/login/ HTTP/1.1" 200 72
+INFO 2024-12-03 23:56:48,862 basehttp "GET /course/api/courses/ HTTP/1.1" 200 216
+INFO 2024-12-03 23:56:49,013 basehttp "GET /course/api/courses/ HTTP/1.1" 200 216
+INFO 2024-12-03 23:57:02,896 basehttp "POST /assistant/create/ HTTP/1.1" 201 94
+INFO 2024-12-03 23:57:23,815 basehttp "POST /assistant/create/ HTTP/1.1" 201 197
+INFO 2024-12-04 00:01:00,750 autoreload C:\Users\Nitro\Desktop\Study\Django\team_project\coursePlatformBack\course_platform_back\course_platform_back\settings.py changed, reloading.
+INFO 2024-12-04 00:01:01,682 autoreload Watching for file changes with StatReloader
+INFO 2024-12-04 00:01:18,672 views Received request to CreateAssistantView
+INFO 2024-12-04 00:01:25,978 views Assistant responded successfully
+INFO 2024-12-04 00:01:25,987 basehttp "POST /assistant/create/ HTTP/1.1" 201 138
+INFO 2024-12-04 00:01:53,315 basehttp "GET /course/api/courses/1/topics/ HTTP/1.1" 200 130
+INFO 2024-12-04 00:01:53,315 basehttp "GET /course/api/courses/1/ HTTP/1.1" 200 106
+INFO 2024-12-04 00:01:53,368 basehttp "GET /course/api/courses/1/topics/ HTTP/1.1" 200 130
+INFO 2024-12-04 00:01:53,374 basehttp "GET /course/api/courses/1/ HTTP/1.1" 200 106
+INFO 2024-12-04 00:01:53,374 basehttp "OPTIONS /course/api/courses/1/ HTTP/1.1" 200 0
+INFO 2024-12-04 00:01:53,382 basehttp "GET /course/api/courses/1/ HTTP/1.1" 200 106
+INFO 2024-12-04 00:01:53,396 basehttp "OPTIONS /course/api/courses/1/comments/ HTTP/1.1" 200 0
+INFO 2024-12-04 00:01:53,405 basehttp "GET /course/api/courses/1/comments/ HTTP/1.1" 200 292
+INFO 2024-12-04 00:03:20,922 autoreload C:\Users\Nitro\Desktop\Study\Django\team_project\coursePlatformBack\course_platform_back\quiz\views.py changed, reloading.
+INFO 2024-12-04 00:03:22,423 autoreload Watching for file changes with StatReloader
+INFO 2024-12-04 00:03:29,345 autoreload C:\Users\Nitro\Desktop\Study\Django\team_project\coursePlatformBack\course_platform_back\quiz\views.py changed, reloading.
+INFO 2024-12-04 00:03:30,393 autoreload Watching for file changes with StatReloader
+INFO 2024-12-04 00:04:44,717 autoreload C:\Users\Nitro\Desktop\Study\Django\team_project\coursePlatformBack\course_platform_back\quiz\views.py changed, reloading.
+INFO 2024-12-04 00:04:46,061 autoreload Watching for file changes with StatReloader
+INFO 2024-12-04 00:05:01,435 autoreload C:\Users\Nitro\Desktop\Study\Django\team_project\coursePlatformBack\course_platform_back\quiz\views.py changed, reloading.
+INFO 2024-12-04 00:05:02,978 autoreload Watching for file changes with StatReloader
+INFO 2024-12-04 00:05:12,752 autoreload C:\Users\Nitro\Desktop\Study\Django\team_project\coursePlatformBack\course_platform_back\quiz\views.py changed, reloading.
+INFO 2024-12-04 00:05:14,086 autoreload Watching for file changes with StatReloader
+INFO 2024-12-04 00:06:38,633 autoreload C:\Users\Nitro\Desktop\Study\Django\team_project\coursePlatformBack\course_platform_back\course\views.py changed, reloading.
+INFO 2024-12-04 00:06:39,729 autoreload Watching for file changes with StatReloader
+INFO 2024-12-04 00:07:04,663 autoreload C:\Users\Nitro\Desktop\Study\Django\team_project\coursePlatformBack\course_platform_back\course\views.py changed, reloading.
+INFO 2024-12-04 00:07:06,250 autoreload Watching for file changes with StatReloader
+INFO 2024-12-04 00:07:15,226 autoreload C:\Users\Nitro\Desktop\Study\Django\team_project\coursePlatformBack\course_platform_back\course\views.py changed, reloading.
+INFO 2024-12-04 00:07:16,715 autoreload Watching for file changes with StatReloader
+INFO 2024-12-04 00:07:21,364 autoreload C:\Users\Nitro\Desktop\Study\Django\team_project\coursePlatformBack\course_platform_back\course\views.py changed, reloading.
+INFO 2024-12-04 00:07:22,390 autoreload Watching for file changes with StatReloader
+INFO 2024-12-04 00:07:31,510 autoreload C:\Users\Nitro\Desktop\Study\Django\team_project\coursePlatformBack\course_platform_back\course\views.py changed, reloading.
+INFO 2024-12-04 00:07:32,350 autoreload Watching for file changes with StatReloader
+INFO 2024-12-04 00:07:46,768 autoreload C:\Users\Nitro\Desktop\Study\Django\team_project\coursePlatformBack\course_platform_back\course\views.py changed, reloading.
+INFO 2024-12-04 00:07:48,295 autoreload Watching for file changes with StatReloader
+INFO 2024-12-04 00:08:12,486 autoreload C:\Users\Nitro\Desktop\Study\Django\team_project\coursePlatformBack\course_platform_back\course\views.py changed, reloading.
+INFO 2024-12-04 00:08:13,392 autoreload Watching for file changes with StatReloader
+INFO 2024-12-04 00:08:22,273 basehttp "GET /video/api/videos/1 HTTP/1.1" 200 302
+INFO 2024-12-04 00:08:22,312 basehttp "GET /media/image/Screenshot_247_9DQUJbb.png HTTP/1.1" 304 0
+INFO 2024-12-04 00:08:22,313 basehttp "GET /media/image/Screenshot_248_lJBR2T1.png HTTP/1.1" 304 0
+INFO 2024-12-04 00:08:22,326 basehttp "GET /video/api/videos/1 HTTP/1.1" 200 302
+INFO 2024-12-04 00:08:35,709 basehttp "OPTIONS /api/users/profile/olzhas/ HTTP/1.1" 200 0
+INFO 2024-12-04 00:08:35,721 basehttp "GET /api/users/profile/olzhas/ HTTP/1.1" 200 156
+INFO 2024-12-04 00:08:35,728 basehttp "GET /media/profile_pics/1_ONrfWPX.ico HTTP/1.1" 304 0
+INFO 2024-12-04 00:08:39,840 views Fetching all courses
+INFO 2024-12-04 00:08:39,842 basehttp "GET /course/api/courses/ HTTP/1.1" 200 216
+INFO 2024-12-04 00:08:39,881 views Fetching all courses
+INFO 2024-12-04 00:08:39,884 basehttp "GET /course/api/courses/ HTTP/1.1" 200 216
+INFO 2024-12-04 00:08:44,084 views Fetching topics for course ID: 1
+INFO 2024-12-04 00:08:44,086 basehttp "GET /course/api/courses/1/topics/ HTTP/1.1" 200 130
+INFO 2024-12-04 00:08:44,088 views Fetching course with ID: 1
+INFO 2024-12-04 00:08:44,090 basehttp "GET /course/api/courses/1/ HTTP/1.1" 200 106
+INFO 2024-12-04 00:08:44,124 views Fetching topics for course ID: 1
+INFO 2024-12-04 00:08:44,126 basehttp "GET /course/api/courses/1/topics/ HTTP/1.1" 200 130
+INFO 2024-12-04 00:08:44,129 views Fetching course with ID: 1
+INFO 2024-12-04 00:08:44,131 views Fetching course with ID: 1
+INFO 2024-12-04 00:08:44,133 basehttp "GET /course/api/courses/1/ HTTP/1.1" 200 106
+INFO 2024-12-04 00:08:44,134 basehttp "GET /course/api/courses/1/ HTTP/1.1" 200 106
+INFO 2024-12-04 00:08:44,142 views Fetching comments for course ID: 1
+INFO 2024-12-04 00:08:44,150 basehttp "GET /course/api/courses/1/comments/ HTTP/1.1" 200 292
+INFO 2024-12-04 00:08:50,691 views Creating comment for course ID: 1
+INFO 2024-12-04 00:08:50,709 views Comment created successfully
+INFO 2024-12-04 00:08:50,709 basehttp "POST /course/api/courses/1/comments/ HTTP/1.1" 201 96
+INFO 2024-12-04 00:08:50,718 views Fetching comments for course ID: 1
+INFO 2024-12-04 00:08:50,723 basehttp "GET /course/api/courses/1/comments/ HTTP/1.1" 200 389
+INFO 2024-12-04 00:17:34,024 autoreload C:\Users\Nitro\Desktop\Study\Django\team_project\coursePlatformBack\course_platform_back\course_platform_back\settings.py changed, reloading.
+INFO 2024-12-04 00:17:35,685 autoreload Watching for file changes with StatReloader
+INFO 2024-12-04 00:17:44,464 autoreload C:\Users\Nitro\Desktop\Study\Django\team_project\coursePlatformBack\course_platform_back\course_platform_back\settings.py changed, reloading.
+INFO 2024-12-04 00:17:45,360 autoreload Watching for file changes with StatReloader
+INFO 2024-12-04 00:18:48,265 autoreload C:\Users\Nitro\Desktop\Study\Django\team_project\coursePlatformBack\course_platform_back\course_platform_back\settings.py changed, reloading.
+INFO 2024-12-04 00:18:49,281 autoreload Watching for file changes with StatReloader
+INFO 2024-12-04 00:19:29,094 autoreload C:\Users\Nitro\Desktop\Study\Django\team_project\coursePlatformBack\course_platform_back\users\views.py changed, reloading.
+INFO 2024-12-04 00:19:30,487 autoreload Watching for file changes with StatReloader
+INFO 2024-12-04 00:19:45,848 autoreload C:\Users\Nitro\Desktop\Study\Django\team_project\coursePlatformBack\course_platform_back\users\views.py changed, reloading.
+INFO 2024-12-04 00:19:46,769 autoreload Watching for file changes with StatReloader
+INFO 2024-12-04 00:20:03,213 autoreload C:\Users\Nitro\Desktop\Study\Django\team_project\coursePlatformBack\course_platform_back\users\views.py changed, reloading.
+INFO 2024-12-04 00:20:04,645 autoreload Watching for file changes with StatReloader
+INFO 2024-12-04 00:20:13,325 autoreload C:\Users\Nitro\Desktop\Study\Django\team_project\coursePlatformBack\course_platform_back\users\views.py changed, reloading.
+INFO 2024-12-04 00:20:14,209 autoreload Watching for file changes with StatReloader
+INFO 2024-12-04 00:20:21,813 autoreload C:\Users\Nitro\Desktop\Study\Django\team_project\coursePlatformBack\course_platform_back\users\views.py changed, reloading.
+INFO 2024-12-04 00:20:22,672 autoreload Watching for file changes with StatReloader
+INFO 2024-12-04 00:20:27,765 views Fetching topics for course ID: 1
+INFO 2024-12-04 00:20:27,768 basehttp "GET /course/api/courses/1/topics/ HTTP/1.1" 200 130
+INFO 2024-12-04 00:20:27,771 views Fetching course with ID: 1
+INFO 2024-12-04 00:20:27,774 basehttp "GET /course/api/courses/1/ HTTP/1.1" 200 106
+INFO 2024-12-04 00:20:27,800 views Fetching topics for course ID: 1
+INFO 2024-12-04 00:20:27,802 basehttp "GET /course/api/courses/1/topics/ HTTP/1.1" 200 130
+INFO 2024-12-04 00:20:27,804 views Fetching course with ID: 1
+INFO 2024-12-04 00:20:27,807 basehttp "GET /course/api/courses/1/ HTTP/1.1" 200 106
+INFO 2024-12-04 00:20:27,815 views Fetching course with ID: 1
+INFO 2024-12-04 00:20:27,817 basehttp "GET /course/api/courses/1/ HTTP/1.1" 200 106
+INFO 2024-12-04 00:20:27,847 views Fetching comments for course ID: 1
+INFO 2024-12-04 00:20:27,853 basehttp "GET /course/api/courses/1/comments/ HTTP/1.1" 200 389
+INFO 2024-12-04 00:20:31,567 basehttp "GET /video/api/videos/1 HTTP/1.1" 200 302
+INFO 2024-12-04 00:20:31,610 basehttp "GET /video/api/videos/1 HTTP/1.1" 200 302
+INFO 2024-12-04 00:20:32,825 basehttp "OPTIONS /api/users/logout/ HTTP/1.1" 200 0
+INFO 2024-12-04 00:20:32,832 basehttp "POST /api/users/logout/ HTTP/1.1" 204 0
+WARNING 2024-12-04 00:20:40,455 log Bad Request: /api/users/login/
+WARNING 2024-12-04 00:20:40,455 basehttp "POST /api/users/login/ HTTP/1.1" 400 31
+INFO 2024-12-04 00:20:51,602 basehttp "POST /api/users/login/ HTTP/1.1" 200 72
+INFO 2024-12-04 00:20:51,620 views Fetching all courses
+INFO 2024-12-04 00:20:51,622 basehttp "GET /course/api/courses/ HTTP/1.1" 200 216
+INFO 2024-12-04 00:20:51,662 views Fetching all courses
+INFO 2024-12-04 00:20:51,664 basehttp "GET /course/api/courses/ HTTP/1.1" 200 216
+INFO 2024-12-04 00:20:54,068 basehttp "GET /api/users/profile/olzhas/ HTTP/1.1" 200 156
+INFO 2024-12-04 00:20:55,598 views Fetching all courses
+INFO 2024-12-04 00:20:55,600 basehttp "GET /course/api/courses/ HTTP/1.1" 200 216
+INFO 2024-12-04 00:20:55,637 views Fetching all courses
+INFO 2024-12-04 00:20:55,639 basehttp "GET /course/api/courses/ HTTP/1.1" 200 216
+INFO 2024-12-04 00:22:14,618 autoreload C:\Users\Nitro\Desktop\Study\Django\team_project\coursePlatformBack\course_platform_back\users\views.py changed, reloading.
+INFO 2024-12-04 00:22:16,003 autoreload Watching for file changes with StatReloader
+INFO 2024-12-04 00:22:19,970 views Fetching all courses
+INFO 2024-12-04 00:22:19,972 basehttp "GET /course/api/courses/ HTTP/1.1" 200 216
+INFO 2024-12-04 00:22:19,999 views Fetching all courses
+INFO 2024-12-04 00:22:20,001 basehttp "GET /course/api/courses/ HTTP/1.1" 200 216
+INFO 2024-12-04 00:22:21,175 basehttp "GET /api/users/profile/olzhas/ HTTP/1.1" 200 156
+INFO 2024-12-04 00:22:22,836 views Fetching all courses
+INFO 2024-12-04 00:22:22,836 basehttp "GET /course/api/courses/ HTTP/1.1" 200 216
+INFO 2024-12-04 00:22:22,883 views Fetching all courses
+INFO 2024-12-04 00:22:22,886 basehttp "GET /course/api/courses/ HTTP/1.1" 200 216
+INFO 2024-12-04 00:22:24,520 basehttp "GET /api/users/profile/olzhas/ HTTP/1.1" 200 156
+INFO 2024-12-04 00:22:25,627 views Fetching all courses
+INFO 2024-12-04 00:22:25,629 basehttp "GET /course/api/courses/ HTTP/1.1" 200 216
+INFO 2024-12-04 00:22:25,667 views Fetching all courses
+INFO 2024-12-04 00:22:25,669 basehttp "GET /course/api/courses/ HTTP/1.1" 200 216
+INFO 2024-12-04 00:28:45,420 autoreload C:\Users\Nitro\Desktop\Study\Django\team_project\coursePlatformBack\course_platform_back\chatgpt_agent\views.py changed, reloading.
+INFO 2024-12-04 00:28:46,325 autoreload Watching for file changes with StatReloader
+INFO 2024-12-04 00:28:48,532 views Fetching all courses
+INFO 2024-12-04 00:28:48,534 basehttp "GET /course/api/courses/ HTTP/1.1" 200 216
+INFO 2024-12-04 00:28:48,559 views Fetching all courses
+INFO 2024-12-04 00:28:48,562 basehttp "GET /course/api/courses/ HTTP/1.1" 200 216
+INFO 2024-12-04 00:28:50,244 basehttp "GET /api/users/profile/olzhas/ HTTP/1.1" 200 156
+INFO 2024-12-04 00:28:52,036 views Fetching all courses
+INFO 2024-12-04 00:28:52,036 basehttp "GET /course/api/courses/ HTTP/1.1" 200 216
+INFO 2024-12-04 00:28:52,085 views Fetching all courses
+INFO 2024-12-04 00:28:52,085 basehttp "GET /course/api/courses/ HTTP/1.1" 200 216
+INFO 2024-12-04 00:28:58,473 views Received request to CreateAssistantView
+INFO 2024-12-04 00:29:03,499 views Assistant responded successfully
+INFO 2024-12-04 00:29:03,509 basehttp "POST /assistant/create/ HTTP/1.1" 201 94
