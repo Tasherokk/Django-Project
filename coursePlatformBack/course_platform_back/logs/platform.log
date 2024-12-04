@@ -2632,3 +2632,77 @@ INFO 2024-12-04 03:27:39,239 views Fetching comments for course ID: 1
 INFO 2024-12-04 03:27:39,242 basehttp "GET /course/api/courses/1/comments/ HTTP/1.1" 200 106
 INFO 2024-12-04 03:27:41,419 basehttp "GET /video/api/videos/1 HTTP/1.1" 200 302
 INFO 2024-12-04 03:27:41,461 basehttp "GET /video/api/videos/1 HTTP/1.1" 200 302
+INFO 2024-12-04 10:18:21,416 autoreload Watching for file changes with StatReloader
+WARNING 2024-12-04 10:18:30,218 log Not Found: /api/courses/
+WARNING 2024-12-04 10:18:30,226 basehttp "GET /api/courses/ HTTP/1.1" 404 7776
+INFO 2024-12-04 10:18:49,897 views Fetching all courses
+INFO 2024-12-04 10:18:49,906 basehttp "GET /course/api/courses/ HTTP/1.1" 200 216
+INFO 2024-12-04 10:19:44,146 views Fetching course with ID: 1
+INFO 2024-12-04 10:19:44,146 basehttp "GET /course/api/courses/1/ HTTP/1.1" 200 106
+INFO 2024-12-04 10:20:35,175 views Fetching topics for course ID: 1
+INFO 2024-12-04 10:20:35,183 basehttp "GET /course/api/courses/1/topics/ HTTP/1.1" 200 130
+INFO 2024-12-04 10:20:59,582 views Fetching videos for topic ID: 1
+INFO 2024-12-04 10:20:59,582 basehttp "GET /course/api/courses/1/topics/1/videos HTTP/1.1" 200 302
+INFO 2024-12-04 10:21:50,975 views Fetching comments for course ID: 1
+INFO 2024-12-04 10:21:50,983 basehttp "GET /course/api/courses/1/comments/ HTTP/1.1" 200 106
+INFO 2024-12-04 10:23:58,623 basehttp "OPTIONS /api/users/login/ HTTP/1.1" 200 0
+INFO 2024-12-04 10:23:59,081 basehttp "POST /api/users/login/ HTTP/1.1" 200 77
+INFO 2024-12-04 10:23:59,131 views Fetching all courses
+INFO 2024-12-04 10:23:59,131 basehttp "GET /course/api/courses/ HTTP/1.1" 200 216
+INFO 2024-12-04 10:23:59,278 views Fetching all courses
+INFO 2024-12-04 10:23:59,283 basehttp "GET /course/api/courses/ HTTP/1.1" 200 216
+INFO 2024-12-04 10:24:13,967 views Fetching topics for course ID: 1
+INFO 2024-12-04 10:24:13,967 basehttp "GET /course/api/courses/1/topics/ HTTP/1.1" 200 130
+INFO 2024-12-04 10:24:13,975 views Fetching course with ID: 1
+INFO 2024-12-04 10:24:13,975 basehttp "GET /course/api/courses/1/ HTTP/1.1" 200 106
+INFO 2024-12-04 10:24:14,081 views Fetching topics for course ID: 1
+INFO 2024-12-04 10:24:14,081 basehttp "GET /course/api/courses/1/topics/ HTTP/1.1" 200 130
+INFO 2024-12-04 10:24:14,089 views Fetching course with ID: 1
+INFO 2024-12-04 10:24:14,097 basehttp "GET /course/api/courses/1/ HTTP/1.1" 200 106
+INFO 2024-12-04 10:24:14,114 basehttp "OPTIONS /api/users/me/ HTTP/1.1" 200 0
+INFO 2024-12-04 10:24:14,129 basehttp "GET /api/users/me/ HTTP/1.1" 200 75
+INFO 2024-12-04 10:24:14,162 basehttp "OPTIONS /course/api/courses/1/ HTTP/1.1" 200 0
+INFO 2024-12-04 10:24:14,162 views Fetching course with ID: 1
+INFO 2024-12-04 10:24:14,170 basehttp "GET /course/api/courses/1/ HTTP/1.1" 200 106
+INFO 2024-12-04 10:24:14,186 basehttp "OPTIONS /course/api/courses/1/comments/ HTTP/1.1" 200 0
+INFO 2024-12-04 10:24:14,186 views Fetching comments for course ID: 1
+INFO 2024-12-04 10:24:14,194 basehttp "GET /course/api/courses/1/comments/ HTTP/1.1" 200 106
+INFO 2024-12-04 10:24:18,218 basehttp "GET /video/api/videos/1 HTTP/1.1" 200 302
+INFO 2024-12-04 10:24:18,305 basehttp "GET /media/image/Screenshot_247_9DQUJbb.png HTTP/1.1" 304 0
+INFO 2024-12-04 10:24:18,305 basehttp "GET /media/image/Screenshot_248_lJBR2T1.png HTTP/1.1" 304 0
+INFO 2024-12-04 10:24:18,321 basehttp "GET /video/api/videos/1 HTTP/1.1" 200 302
+WARNING 2024-12-04 10:25:14,376 log Not Found: /course/api/courses/<course_id>/comments/
+WARNING 2024-12-04 10:25:14,376 basehttp "POST /course/api/courses/%3Ccourse_id%3E/comments/ HTTP/1.1" 404 9857
+INFO 2024-12-04 10:25:32,074 views Creating comment for course ID: 1
+INFO 2024-12-04 10:25:32,074 views Comment created successfully
+INFO 2024-12-04 10:25:32,082 basehttp "POST /course/api/courses/1/comments/ HTTP/1.1" 201 116
+INFO 2024-12-04 10:27:46,277 basehttp "PATCH /course/api/courses/1/comments/3 HTTP/1.1" 200 122
+WARNING 2024-12-04 10:30:54,852 log Not Found: /api/courses/1/comments/3/
+WARNING 2024-12-04 10:30:54,852 basehttp "GET /api/courses/1/comments/3/ HTTP/1.1" 404 7815
+WARNING 2024-12-04 10:31:02,426 log Not Found: /course/api/courses/1/comments/3/
+WARNING 2024-12-04 10:31:02,426 basehttp "GET /course/api/courses/1/comments/3/ HTTP/1.1" 404 9816
+INFO 2024-12-04 10:31:41,628 basehttp "GET /course/api/courses/1/comments/3 HTTP/1.1" 200 122
+INFO 2024-12-04 10:34:47,620 views Fetching all questions
+INFO 2024-12-04 10:34:47,628 basehttp "GET /quiz/api/questions/ HTTP/1.1" 200 355
+INFO 2024-12-04 10:35:29,990 views Fetching test for video ID: 1
+INFO 2024-12-04 10:35:30,000 basehttp "GET /quiz/api/test/1 HTTP/1.1" 200 409
+WARNING 2024-12-04 10:37:33,052 log Method Not Allowed: /quiz/api/submit_test/1
+WARNING 2024-12-04 10:37:33,052 basehttp "GET /quiz/api/submit_test/1 HTTP/1.1" 405 40
+INFO 2024-12-04 10:37:39,287 views Submitting test for video ID: 1
+INFO 2024-12-04 10:37:39,295 views Test submitted successfully for video ID 1. Score: 0
+INFO 2024-12-04 10:37:39,295 basehttp "POST /quiz/api/submit_test/1 HTTP/1.1" 200 11
+INFO 2024-12-04 10:41:07,162 basehttp "GET /video/api/videos/1 HTTP/1.1" 200 302
+WARNING 2024-12-04 10:41:47,948 log Not Found: /video/api/video/1
+WARNING 2024-12-04 10:41:47,948 basehttp "GET /video/api/video/1 HTTP/1.1" 404 8489
+INFO 2024-12-04 10:42:10,888 basehttp "GET /video/api/video/1/ HTTP/1.1" 200 528
+INFO 2024-12-04 10:43:08,756 basehttp - Broken pipe from ('127.0.0.1', 50747)
+INFO 2024-12-04 10:45:45,945 basehttp "POST /api/users/register/ HTTP/1.1" 201 105
+INFO 2024-12-04 10:47:07,764 basehttp "POST /api/users/login/ HTTP/1.1" 200 74
+WARNING 2024-12-04 10:47:44,502 log Method Not Allowed: /api/users/logout/
+WARNING 2024-12-04 10:47:44,502 basehttp "GET /api/users/logout/ HTTP/1.1" 405 40
+INFO 2024-12-04 10:47:48,876 basehttp "POST /api/users/logout/ HTTP/1.1" 204 0
+WARNING 2024-12-04 10:49:07,744 log Unauthorized: /api/users/profile/testuser/
+WARNING 2024-12-04 10:49:07,746 basehttp "GET /api/users/profile/testuser/ HTTP/1.1" 401 27
+INFO 2024-12-04 10:49:15,263 basehttp "POST /api/users/login/ HTTP/1.1" 200 74
+INFO 2024-12-04 10:49:22,623 basehttp "GET /api/users/profile/testuser/ HTTP/1.1" 200 126
+INFO 2024-12-04 10:50:51,764 basehttp "GET /api/users/me/ HTTP/1.1" 200 78

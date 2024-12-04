@@ -8,6 +8,10 @@ from rest_framework import generics, permissions
 from .models import Topic, Comment
 from .serializers import  CommentSerializer
 from .permissions import IsAuthorOrReadOnly
+from rest_framework.views import APIView
+from rest_framework.permissions import IsAdminUser
+from rest_framework.response import Response
+from rest_framework import status
 import logging
 
 logger = logging.getLogger('platform')
@@ -127,12 +131,6 @@ def get_videos(request, course_id, topic_id):
 #             return JsonResponse({'error': 'Comment not found.'}, status=404)
 #     else:
 #         return JsonResponse({'error': 'Invalid request method.'}, status=405)
-
-# Import necessary DRF classes
-from rest_framework.views import APIView
-from rest_framework.permissions import IsAdminUser
-from rest_framework.response import Response
-from rest_framework import status
 
 class DeleteCommentView(APIView):
     permission_classes = [IsAdminUser]

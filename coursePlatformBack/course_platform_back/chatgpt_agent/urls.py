@@ -12,3 +12,5 @@ router.register(r'assistant/update', UpdateAssistantResponseView, basename='upda
 urlpatterns = [
     path('', include(router.urls)),  # Включаем роутер для conversation-history
 ]
+
+
