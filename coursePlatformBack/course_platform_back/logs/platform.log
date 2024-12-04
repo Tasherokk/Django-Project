@@ -2632,3 +2632,327 @@ INFO 2024-12-04 03:27:39,239 views Fetching comments for course ID: 1
 INFO 2024-12-04 03:27:39,242 basehttp "GET /course/api/courses/1/comments/ HTTP/1.1" 200 106
 INFO 2024-12-04 03:27:41,419 basehttp "GET /video/api/videos/1 HTTP/1.1" 200 302
 INFO 2024-12-04 03:27:41,461 basehttp "GET /video/api/videos/1 HTTP/1.1" 200 302
+INFO 2024-12-04 08:35:20,754 autoreload Watching for file changes with StatReloader
+INFO 2024-12-04 08:36:10,977 basehttp "OPTIONS /api/users/login/ HTTP/1.1" 200 0
+INFO 2024-12-04 08:36:12,784 basehttp "POST /api/users/login/ HTTP/1.1" 200 71
+INFO 2024-12-04 08:36:12,840 views Fetching all courses
+INFO 2024-12-04 08:36:12,845 basehttp "GET /course/api/courses/ HTTP/1.1" 200 216
+INFO 2024-12-04 08:36:14,150 views Fetching all courses
+INFO 2024-12-04 08:36:14,153 basehttp "GET /course/api/courses/ HTTP/1.1" 200 216
+INFO 2024-12-04 08:36:16,997 views Fetching topics for course ID: 1
+INFO 2024-12-04 08:36:17,000 basehttp "GET /course/api/courses/1/topics/ HTTP/1.1" 200 130
+INFO 2024-12-04 08:36:17,003 views Fetching course with ID: 1
+INFO 2024-12-04 08:36:17,008 basehttp "GET /course/api/courses/1/ HTTP/1.1" 200 106
+INFO 2024-12-04 08:36:17,441 views Fetching topics for course ID: 1
+INFO 2024-12-04 08:36:17,446 basehttp "GET /course/api/courses/1/topics/ HTTP/1.1" 200 130
+INFO 2024-12-04 08:36:17,449 basehttp "OPTIONS /api/users/me/ HTTP/1.1" 200 0
+INFO 2024-12-04 08:36:17,450 views Fetching course with ID: 1
+INFO 2024-12-04 08:36:17,456 basehttp "GET /course/api/courses/1/ HTTP/1.1" 200 106
+INFO 2024-12-04 08:36:17,469 basehttp "GET /api/users/me/ HTTP/1.1" 200 67
+INFO 2024-12-04 08:36:17,480 basehttp "OPTIONS /course/api/courses/1/ HTTP/1.1" 200 0
+INFO 2024-12-04 08:36:17,549 views Fetching course with ID: 1
+INFO 2024-12-04 08:36:17,553 basehttp "GET /course/api/courses/1/ HTTP/1.1" 200 106
+INFO 2024-12-04 08:36:17,558 basehttp "OPTIONS /course/api/courses/1/comments/ HTTP/1.1" 200 0
+INFO 2024-12-04 08:36:17,603 views Fetching comments for course ID: 1
+INFO 2024-12-04 08:36:17,666 basehttp "GET /course/api/courses/1/comments/ HTTP/1.1" 200 106
+INFO 2024-12-04 08:36:27,536 basehttp "GET /video/api/videos/1 HTTP/1.1" 200 302
+INFO 2024-12-04 08:36:27,817 basehttp "GET /video/api/videos/1 HTTP/1.1" 200 302
+INFO 2024-12-04 08:36:31,628 basehttp "GET /video/api/video/2/ HTTP/1.1" 200 528
+INFO 2024-12-04 08:36:32,817 basehttp "GET /video/api/video/2/ HTTP/1.1" 200 528
+INFO 2024-12-04 08:51:13,243 autoreload Watching for file changes with StatReloader
+WARNING 2024-12-04 08:51:26,919 log Unauthorized: /
+WARNING 2024-12-04 08:51:26,920 basehttp "GET / HTTP/1.1" 401 4966
+INFO 2024-12-04 08:51:27,175 basehttp "GET /static/rest_framework/css/prettify.css HTTP/1.1" 304 0
+INFO 2024-12-04 08:51:27,175 basehttp "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 304 0
+INFO 2024-12-04 08:51:27,175 basehttp "GET /static/rest_framework/css/default.css HTTP/1.1" 304 0
+INFO 2024-12-04 08:51:27,175 basehttp "GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 304 0
+INFO 2024-12-04 08:51:27,175 basehttp "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 304 0
+INFO 2024-12-04 08:51:27,176 basehttp "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2024-12-04 08:51:27,183 basehttp "GET /static/rest_framework/js/csrf.js HTTP/1.1" 304 0
+INFO 2024-12-04 08:51:27,184 basehttp "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 304 0
+INFO 2024-12-04 08:51:27,185 basehttp "GET /static/rest_framework/js/load-ajax-form.js HTTP/1.1" 304 0
+INFO 2024-12-04 08:51:27,185 basehttp "GET /static/rest_framework/js/default.js HTTP/1.1" 304 0
+INFO 2024-12-04 08:51:27,187 basehttp "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2024-12-04 08:51:27,321 basehttp "GET /static/rest_framework/img/grid.png HTTP/1.1" 304 0
+WARNING 2024-12-04 08:51:31,500 log Not Found: /analytics
+WARNING 2024-12-04 08:51:31,501 basehttp "GET /analytics HTTP/1.1" 404 7920
+WARNING 2024-12-04 08:51:47,894 log Not Found: /analytics/
+WARNING 2024-12-04 08:51:47,895 basehttp "GET /analytics/ HTTP/1.1" 404 8051
+WARNING 2024-12-04 08:51:55,084 log Not Found: /analytics/dashboard
+WARNING 2024-12-04 08:51:55,085 basehttp "GET /analytics/dashboard HTTP/1.1" 404 8078
+INFO 2024-12-04 08:51:59,777 basehttp "GET /analytics/dashboard/ HTTP/1.1" 302 0
+WARNING 2024-12-04 08:51:59,825 log Not Found: /accounts/login/
+WARNING 2024-12-04 08:51:59,826 basehttp "GET /accounts/login/?next=/analytics/dashboard/ HTTP/1.1" 404 7965
+WARNING 2024-12-04 08:52:12,378 log Not Found: /accounts/login/
+WARNING 2024-12-04 08:52:12,379 basehttp "GET /accounts/login/?next=/analytics/ HTTP/1.1" 404 7955
+WARNING 2024-12-04 08:52:32,401 log Not Found: /analytics/dashboard
+WARNING 2024-12-04 08:52:32,402 basehttp "GET /analytics/dashboard HTTP/1.1" 404 8078
+INFO 2024-12-04 08:52:35,620 basehttp "GET /analytics/dashboard/ HTTP/1.1" 302 0
+WARNING 2024-12-04 08:52:35,639 log Not Found: /accounts/login/
+WARNING 2024-12-04 08:52:35,640 basehttp "GET /accounts/login/?next=/analytics/dashboard/ HTTP/1.1" 404 7965
+INFO 2024-12-04 08:52:53,032 autoreload C:\Users\User\Desktop\prg\Django\proj\Django-Project\coursePlatformBack\course_platform_back\analytics\views.py changed, reloading.
+INFO 2024-12-04 08:52:54,520 autoreload Watching for file changes with StatReloader
+ERROR 2024-12-04 08:53:00,757 log Internal Server Error: /analytics/dashboard/
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\courseenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\courseenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\coursePlatformBack\course_platform_back\analytics\views.py", line 32, in dashboard
+    return render(request, 'analytics/dashboard.html', context)
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\courseenv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\courseenv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\courseenv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: analytics/dashboard.html
+ERROR 2024-12-04 08:53:00,764 basehttp "GET /analytics/dashboard/ HTTP/1.1" 500 90396
+INFO 2024-12-04 08:53:29,253 autoreload C:\Users\User\Desktop\prg\Django\proj\Django-Project\coursePlatformBack\course_platform_back\analytics\views.py changed, reloading.
+INFO 2024-12-04 08:53:30,655 autoreload Watching for file changes with StatReloader
+ERROR 2024-12-04 08:53:35,052 log Internal Server Error: /analytics/dashboard/
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\courseenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\courseenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\coursePlatformBack\course_platform_back\analytics\views.py", line 32, in dashboard
+    return render(request, 'templates/dashboard.html', context)
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\courseenv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\courseenv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\courseenv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: templates/dashboard.html
+ERROR 2024-12-04 08:53:35,059 basehttp "GET /analytics/dashboard/ HTTP/1.1" 500 90533
+INFO 2024-12-04 08:53:41,903 autoreload C:\Users\User\Desktop\prg\Django\proj\Django-Project\coursePlatformBack\course_platform_back\analytics\views.py changed, reloading.
+INFO 2024-12-04 08:53:43,375 autoreload Watching for file changes with StatReloader
+ERROR 2024-12-04 08:53:50,341 log Internal Server Error: /analytics/dashboard/
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\courseenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\courseenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\coursePlatformBack\course_platform_back\analytics\views.py", line 32, in dashboard
+    return render(request, './templates/dashboard.html', context)
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\courseenv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\courseenv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\courseenv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: ./templates/dashboard.html
+ERROR 2024-12-04 08:53:50,348 basehttp "GET /analytics/dashboard/ HTTP/1.1" 500 90557
+INFO 2024-12-04 08:54:06,509 autoreload C:\Users\User\Desktop\prg\Django\proj\Django-Project\coursePlatformBack\course_platform_back\analytics\views.py changed, reloading.
+INFO 2024-12-04 08:54:07,856 autoreload Watching for file changes with StatReloader
+ERROR 2024-12-04 08:54:12,651 log Internal Server Error: /analytics/dashboard/
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\courseenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\courseenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\coursePlatformBack\course_platform_back\analytics\views.py", line 32, in dashboard
+    return render(request, '/templates/dashboard.html', context)
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\courseenv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\courseenv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\courseenv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: /templates/dashboard.html
+ERROR 2024-12-04 08:54:12,658 basehttp "GET /analytics/dashboard/ HTTP/1.1" 500 88234
+ERROR 2024-12-04 08:54:14,384 log Internal Server Error: /analytics/dashboard/
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\courseenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\courseenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\coursePlatformBack\course_platform_back\analytics\views.py", line 32, in dashboard
+    return render(request, '/templates/dashboard.html', context)
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\courseenv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\courseenv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\courseenv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: /templates/dashboard.html
+ERROR 2024-12-04 08:54:14,390 basehttp "GET /analytics/dashboard/ HTTP/1.1" 500 88234
+ERROR 2024-12-04 08:54:15,126 log Internal Server Error: /analytics/dashboard/
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\courseenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\courseenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\coursePlatformBack\course_platform_back\analytics\views.py", line 32, in dashboard
+    return render(request, '/templates/dashboard.html', context)
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\courseenv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\courseenv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\courseenv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: /templates/dashboard.html
+ERROR 2024-12-04 08:54:15,132 basehttp "GET /analytics/dashboard/ HTTP/1.1" 500 88234
+ERROR 2024-12-04 08:54:15,808 log Internal Server Error: /analytics/dashboard/
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\courseenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\courseenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\coursePlatformBack\course_platform_back\analytics\views.py", line 32, in dashboard
+    return render(request, '/templates/dashboard.html', context)
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\courseenv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\courseenv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\courseenv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: /templates/dashboard.html
+ERROR 2024-12-04 08:54:15,814 basehttp "GET /analytics/dashboard/ HTTP/1.1" 500 88234
+ERROR 2024-12-04 08:54:16,547 log Internal Server Error: /analytics/dashboard/
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\courseenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\courseenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\coursePlatformBack\course_platform_back\analytics\views.py", line 32, in dashboard
+    return render(request, '/templates/dashboard.html', context)
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\courseenv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\courseenv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\courseenv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: /templates/dashboard.html
+ERROR 2024-12-04 08:54:16,553 basehttp "GET /analytics/dashboard/ HTTP/1.1" 500 88234
+INFO 2024-12-04 08:54:42,765 autoreload C:\Users\User\Desktop\prg\Django\proj\Django-Project\coursePlatformBack\course_platform_back\analytics\views.py changed, reloading.
+INFO 2024-12-04 08:54:44,197 autoreload Watching for file changes with StatReloader
+INFO 2024-12-04 08:55:08,207 autoreload C:\Users\User\Desktop\prg\Django\proj\Django-Project\coursePlatformBack\course_platform_back\analytics\views.py changed, reloading.
+INFO 2024-12-04 08:55:09,641 autoreload Watching for file changes with StatReloader
+INFO 2024-12-04 08:55:17,257 autoreload C:\Users\User\Desktop\prg\Django\proj\Django-Project\coursePlatformBack\course_platform_back\analytics\views.py changed, reloading.
+INFO 2024-12-04 08:55:18,563 autoreload Watching for file changes with StatReloader
+INFO 2024-12-04 08:55:26,675 basehttp "GET /analytics/dashboard/ HTTP/1.1" 200 3579
+INFO 2024-12-04 08:55:54,550 basehttp "GET /analytics/dashboard/ HTTP/1.1" 200 3579
+INFO 2024-12-04 08:55:56,966 basehttp "GET /analytics/dashboard/ HTTP/1.1" 200 3579
+INFO 2024-12-04 08:55:58,577 basehttp "GET /analytics/dashboard/ HTTP/1.1" 200 3579
+INFO 2024-12-04 09:00:46,599 autoreload C:\Users\User\Desktop\prg\Django\proj\Django-Project\coursePlatformBack\course_platform_back\analytics\views.py changed, reloading.
+INFO 2024-12-04 09:00:48,532 autoreload Watching for file changes with StatReloader
+INFO 2024-12-04 09:01:14,743 autoreload C:\Users\User\Desktop\prg\Django\proj\Django-Project\coursePlatformBack\course_platform_back\analytics\views.py changed, reloading.
+INFO 2024-12-04 09:01:16,204 autoreload Watching for file changes with StatReloader
+INFO 2024-12-04 09:02:22,310 autoreload C:\Users\User\Desktop\prg\Django\proj\Django-Project\coursePlatformBack\course_platform_back\analytics\urls.py changed, reloading.
+INFO 2024-12-04 09:02:24,412 autoreload Watching for file changes with StatReloader
+INFO 2024-12-04 09:02:48,844 basehttp "GET /analytics/dashboard/ HTTP/1.1" 200 776
+INFO 2024-12-04 09:02:59,320 basehttp "GET /analytics/dashboard/ HTTP/1.1" 200 776
+INFO 2024-12-04 09:03:12,065 basehttp "GET /analytics/dashboard/ HTTP/1.1" 200 8672
+INFO 2024-12-04 09:04:18,319 basehttp "GET /analytics/dashboard/ HTTP/1.1" 200 8672
+INFO 2024-12-04 09:05:23,606 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2024-12-04 09:05:24,431 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4160
+INFO 2024-12-04 09:05:24,575 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2024-12-04 09:05:24,575 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2024-12-04 09:05:24,575 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2024-12-04 09:05:24,576 basehttp "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2024-12-04 09:05:24,576 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2024-12-04 09:05:24,616 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2024-12-04 09:05:24,721 basehttp "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2024-12-04 09:05:27,862 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4328
+INFO 2024-12-04 09:05:35,610 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2024-12-04 09:05:35,897 basehttp "GET /admin/ HTTP/1.1" 200 15797
+INFO 2024-12-04 09:05:35,945 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2024-12-04 09:05:36,005 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2024-12-04 09:05:36,005 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2024-12-04 09:05:40,164 basehttp "GET /admin/course/course/ HTTP/1.1" 200 13588
+INFO 2024-12-04 09:05:40,278 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2024-12-04 09:05:40,494 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2024-12-04 09:05:40,531 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2024-12-04 09:05:40,541 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2024-12-04 09:05:40,561 basehttp "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2024-12-04 09:05:40,562 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9097
+INFO 2024-12-04 09:05:40,580 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2024-12-04 09:05:40,818 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2024-12-04 09:05:40,932 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-12-04 09:05:41,063 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2024-12-04 09:05:41,104 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2024-12-04 09:05:41,230 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2024-12-04 09:05:42,553 basehttp "GET /admin/ HTTP/1.1" 200 15797
+INFO 2024-12-04 09:05:44,010 basehttp "GET /admin/course/topic/ HTTP/1.1" 200 13573
+INFO 2024-12-04 09:05:44,253 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-12-04 09:05:46,676 basehttp "GET /admin/course/topic/2/change/ HTTP/1.1" 200 15444
+INFO 2024-12-04 09:05:46,742 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2024-12-04 09:05:46,863 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 200 8794
+INFO 2024-12-04 09:05:46,987 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2024-12-04 09:05:47,086 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-12-04 09:05:47,502 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2024-12-04 09:05:47,535 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 200 11564
+INFO 2024-12-04 09:05:49,142 basehttp "GET /admin/course/topic/ HTTP/1.1" 200 13573
+INFO 2024-12-04 09:05:51,521 basehttp "GET /admin/course/topic/add/ HTTP/1.1" 200 15208
+INFO 2024-12-04 09:05:51,786 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-12-04 09:06:07,354 basehttp "POST /admin/course/topic/add/ HTTP/1.1" 302 0
+INFO 2024-12-04 09:06:07,609 basehttp "GET /admin/course/topic/ HTTP/1.1" 200 14038
+INFO 2024-12-04 09:06:07,869 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-12-04 09:06:07,905 basehttp "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2024-12-04 09:06:13,194 basehttp "GET /video/api/video/2/ HTTP/1.1" 200 528
+INFO 2024-12-04 09:06:13,478 basehttp "GET /video/api/video/2/ HTTP/1.1" 200 528
+INFO 2024-12-04 09:06:15,823 basehttp "OPTIONS /api/users/profile/admin/ HTTP/1.1" 200 0
+WARNING 2024-12-04 09:06:15,918 log Not Found: /api/users/profile/admin/
+WARNING 2024-12-04 09:06:15,919 basehttp "GET /api/users/profile/admin/ HTTP/1.1" 404 48
+INFO 2024-12-04 09:06:24,181 views Fetching all courses
+INFO 2024-12-04 09:06:24,184 basehttp "GET /course/api/courses/ HTTP/1.1" 200 216
+INFO 2024-12-04 09:06:24,284 views Fetching all courses
+INFO 2024-12-04 09:06:24,288 basehttp "GET /course/api/courses/ HTTP/1.1" 200 216
+INFO 2024-12-04 09:06:26,093 views Fetching topics for course ID: 2
+INFO 2024-12-04 09:06:26,097 basehttp "GET /course/api/courses/2/topics/ HTTP/1.1" 200 119
+INFO 2024-12-04 09:06:26,100 views Fetching course with ID: 2
+INFO 2024-12-04 09:06:26,104 basehttp "GET /course/api/courses/2/ HTTP/1.1" 200 106
+INFO 2024-12-04 09:06:26,175 views Fetching topics for course ID: 2
+INFO 2024-12-04 09:06:26,179 basehttp "GET /course/api/courses/2/topics/ HTTP/1.1" 200 119
+INFO 2024-12-04 09:06:26,182 views Fetching course with ID: 2
+INFO 2024-12-04 09:06:26,186 basehttp "GET /course/api/courses/2/ HTTP/1.1" 200 106
+INFO 2024-12-04 09:06:26,238 basehttp "GET /api/users/me/ HTTP/1.1" 200 67
+INFO 2024-12-04 09:06:26,262 basehttp "OPTIONS /course/api/courses/2/ HTTP/1.1" 200 0
+INFO 2024-12-04 09:06:26,264 views Fetching course with ID: 2
+INFO 2024-12-04 09:06:26,269 basehttp "GET /course/api/courses/2/ HTTP/1.1" 200 106
+INFO 2024-12-04 09:06:26,275 basehttp "OPTIONS /course/api/courses/2/comments/ HTTP/1.1" 200 0
+INFO 2024-12-04 09:06:26,279 views Fetching comments for course ID: 2
+INFO 2024-12-04 09:06:26,281 basehttp "GET /course/api/courses/2/comments/ HTTP/1.1" 200 2
+INFO 2024-12-04 09:06:30,661 views Creating comment for course ID: 2
+INFO 2024-12-04 09:06:30,843 views Comment created successfully
+INFO 2024-12-04 09:06:30,845 basehttp "POST /course/api/courses/2/comments/ HTTP/1.1" 201 95
+INFO 2024-12-04 09:06:30,854 views Fetching comments for course ID: 2
+INFO 2024-12-04 09:06:30,858 basehttp "GET /course/api/courses/2/comments/ HTTP/1.1" 200 97
+WARNING 2024-12-04 09:07:28,879 log Not Found: /analytics/dashboard
+WARNING 2024-12-04 09:07:28,880 basehttp "GET /analytics/dashboard HTTP/1.1" 404 8078
+INFO 2024-12-04 09:07:32,861 basehttp "GET /analytics/dashboard/ HTTP/1.1" 200 8672
+INFO 2024-12-04 09:09:23,978 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2024-12-04 09:09:23,996 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4160
+INFO 2024-12-04 09:09:47,525 basehttp "GET /analytics/dashboard/ HTTP/1.1" 200 8672
+INFO 2024-12-04 09:13:27,317 basehttp "GET /analytics/dashboard/ HTTP/1.1" 200 4625
+INFO 2024-12-04 09:13:41,011 basehttp "GET /analytics/dashboard/ HTTP/1.1" 200 9446
+INFO 2024-12-04 09:14:35,760 basehttp "GET /analytics/dashboard/ HTTP/1.1" 200 4627
+INFO 2024-12-04 09:15:08,531 basehttp "GET /analytics/dashboard/ HTTP/1.1" 200 4628
+INFO 2024-12-04 09:19:21,363 basehttp "GET /analytics/dashboard/ HTTP/1.1" 200 9446
+INFO 2024-12-04 09:20:30,059 autoreload C:\Users\User\Desktop\prg\Django\proj\Django-Project\coursePlatformBack\course_platform_back\analytics\views.py changed, reloading.
+INFO 2024-12-04 09:20:31,942 autoreload Watching for file changes with StatReloader
+INFO 2024-12-04 09:20:39,934 autoreload C:\Users\User\Desktop\prg\Django\proj\Django-Project\coursePlatformBack\course_platform_back\analytics\views.py changed, reloading.
+INFO 2024-12-04 09:20:41,223 autoreload Watching for file changes with StatReloader
+INFO 2024-12-04 09:20:59,897 autoreload C:\Users\User\Desktop\prg\Django\proj\Django-Project\coursePlatformBack\course_platform_back\analytics\views.py changed, reloading.
+INFO 2024-12-04 09:21:01,317 autoreload Watching for file changes with StatReloader
+INFO 2024-12-04 09:21:16,312 autoreload C:\Users\User\Desktop\prg\Django\proj\Django-Project\coursePlatformBack\course_platform_back\analytics\views.py changed, reloading.
+INFO 2024-12-04 09:21:17,629 autoreload Watching for file changes with StatReloader
+INFO 2024-12-04 09:21:42,587 autoreload C:\Users\User\Desktop\prg\Django\proj\Django-Project\coursePlatformBack\course_platform_back\analytics\views.py changed, reloading.
+INFO 2024-12-04 09:21:43,909 autoreload Watching for file changes with StatReloader
+ERROR 2024-12-04 09:21:51,704 log Internal Server Error: /analytics/dashboard/
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\courseenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\courseenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\Desktop\prg\Django\proj\Django-Project\coursePlatformBack\course_platform_back\analytics\views.py", line 23, in dashboard
+    num_comments = [course.nm_comments for course in courses]
+                    ^^^^^^^^^^^^^^^^^^
+AttributeError: 'Course' object has no attribute 'nm_comments'. Did you mean: 'num_comments'?
+ERROR 2024-12-04 09:21:51,710 basehttp "GET /analytics/dashboard/ HTTP/1.1" 500 74416
+INFO 2024-12-04 09:22:05,920 autoreload C:\Users\User\Desktop\prg\Django\proj\Django-Project\coursePlatformBack\course_platform_back\analytics\views.py changed, reloading.
+INFO 2024-12-04 09:22:07,364 autoreload Watching for file changes with StatReloader
+INFO 2024-12-04 09:22:12,291 basehttp "GET /analytics/dashboard/ HTTP/1.1" 200 7169
+INFO 2024-12-04 09:22:20,696 basehttp "GET /analytics/dashboard/ HTTP/1.1" 200 7169

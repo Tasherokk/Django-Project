@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analytics Dashboard</title>
+    <!-- Include Chart.js from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .chart-container {
+            width: 80%;
+            margin: auto;
+        }
+        canvas {
+            margin: 40px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Analytics Dashboard</h1>
+    <script>
+        // Pass data from Django to JavaScript
+        const courseTitles = {{ course_titles|safe }};
+        const numTopics = {{ num_topics|safe }};
+        const numVideos = {{ num_videos|safe }};
+        const numTests = {{ num_tests|safe }};
+        const numQuestions = {{ num_questions|safe }};
+        const numComments ={{num_comments|safe}};
+    </script>
+    <div class="chart-container">
+        <h2>Number of Topics per Course</h2>
+        <canvas id="topicsChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+        <h2>Number of Videos per Course</h2>
+        <canvas id="videosChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+        <h2>Number of Tests per Course</h2>
+        <canvas id="testsChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+        <h2>Number of Questions per Course</h2>
+        <canvas id="questionsChart"></canvas>
+    </div>
+    <div class="chart-container">
+        <h2>Number of comments per Course</h2>
+        <canvas id="commentsChart"></canvas>
+    </div>
+
+        <script>
+        // Topics Chart
+        const ctxTopics = document.getElementById('topicsChart').getContext('2d');
+        const topicsChart = new Chart(ctxTopics, {
+            type: 'bar',
+            data: {
+                labels: courseTitles,
+                datasets: [{
+                    label: 'Number of Topics',
+                    data: numTopics,
+                    backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: { scales: { y: { beginAtZero: true } } }
+        });
+
+        // Videos Chart
+        const ctxVideos = document.getElementById('videosChart').getContext('2d');
+        const videosChart = new Chart(ctxVideos, {
+            type: 'bar',
+            data: {
+                labels: courseTitles,
+                datasets: [{
+                    label: 'Number of Videos',
+                    data: numVideos,
+                    backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: { scales: { y: { beginAtZero: true } } }
+        });
+
+        // Tests Chart
+        const ctxTests = document.getElementById('testsChart').getContext('2d');
+        const testsChart = new Chart(ctxTests, {
+            type: 'bar',
+            data: {
+                labels: courseTitles,
+                datasets: [{
+                    label: 'Number of Tests',
+                    data: numTests,
+                    backgroundColor: 'rgba(255, 206, 86, 0.6)',
+                    borderColor: 'rgba(255, 206, 86, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: { scales: { y: { beginAtZero: true } } }
+        });
+
+        // Questions Chart
+        const ctxQuestions = document.getElementById('questionsChart').getContext('2d');
+        const questionsChart = new Chart(ctxQuestions, {
+            type: 'bar',
+            data: {
+                labels: courseTitles,
+                datasets: [{
+                    label: 'Number of Questions',
+                    data: numQuestions,
+                    backgroundColor: 'rgba(153, 102, 255, 0.6)',
+                    borderColor: 'rgba(153, 102, 255, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: { scales: { y: { beginAtZero: true } } }
+        });
+        const ctxComments = document.getElementById('commentsChart').getContext('2d');
+        const commentsChart = new Chart(ctxComments, {
+            type: 'bar',
+            data: {
+                labels: courseTitles,
+                datasets: [{
+                    label: 'Number of comments',
+                    data: numComments,
+                    backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: { scales: { y: { beginAtZero: true } } }
+        });
+
+    </script>
+</body>
+</html>
+    <script>
+        // Topics Chart
+        const ctxTopics = document.getElementById('topicsChart').getContext('2d');
+        const topicsChart = new Chart(ctxTopics, {
+            type: 'bar',
+            data: {
+                labels: courseTitles,
+                datasets: [{
+                    label: 'Number of Topics',
+                    data: numTopics,
+                    backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: { scales: { y: { beginAtZero: true } } }
+        });
+
+        // Videos Chart
+        const ctxVideos = document.getElementById('videosChart').getContext('2d');
+        const videosChart = new Chart(ctxVideos, {
+            type: 'bar',
+            data: {
+                labels: courseTitles,
+                datasets: [{
+                    label: 'Number of Videos',
+                    data: numVideos,
+                    backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: { scales: { y: { beginAtZero: true } } }
+        });
+
+        // Tests Chart
+        const ctxTests = document.getElementById('testsChart').getContext('2d');
+        const testsChart = new Chart(ctxTests, {
+            type: 'bar',
+            data: {
+                labels: courseTitles,
+                datasets: [{
+                    label: 'Number of Tests',
+                    data: numTests,
+                    backgroundColor: 'rgba(255, 206, 86, 0.6)',
+                    borderColor: 'rgba(255, 206, 86, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: { scales: { y: { beginAtZero: true } } }
+        });
+
+        // Questions Chart
+        const ctxQuestions = document.getElementById('questionsChart').getContext('2d');
+        const questionsChart = new Chart(ctxQuestions, {
+            type: 'bar',
+            data: {
+                labels: courseTitles,
+                datasets: [{
+                    label: 'Number of Questions',
+                    data: numQuestions,
+                    backgroundColor: 'rgba(153, 102, 255, 0.6)',
+                    borderColor: 'rgba(153, 102, 255, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: { scales: { y: { beginAtZero: true } } }
+        });
+    </script>
+</body>
