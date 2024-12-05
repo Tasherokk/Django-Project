@@ -58,6 +58,9 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "course_platform_front.urls"
 
+ALLOWED_HOSTS = [
+    "142.93.171.201",
+]
 
 TEMPLATES = [
     {

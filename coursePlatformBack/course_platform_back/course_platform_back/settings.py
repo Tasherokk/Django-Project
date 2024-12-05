@@ -73,6 +73,10 @@ TEMPLATES = [
     },
 ]
 
+ALLOWED_HOSTS = [
+    "142.93.171.201",
+]
+
 WSGI_APPLICATION = "course_platform_back.wsgi.application"
 
 
