@@ -37,7 +37,7 @@
         });
 
         async function loadTest(token) {
-            const response = await fetch('http://localhost:8000/test/', {
+            const response = await fetch('http://142.93.171.201:8000/test/', {
                 headers: {
                     'Authorization': `Token ${token}`,
                     'Content-Type': 'application/json'
@@ -105,7 +105,7 @@
             questions.forEach(question => {
                 answers[question.id] = question.selectedAnswer;
             });
-            const response = await fetch('http://localhost:8000/submit/', {
+            const response = await fetch('http://142.93.171.201:8000/submit/', {
                 method: 'POST',
                 headers: {
                     'Authorization': `Token ${token}`,

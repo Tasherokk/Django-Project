@@ -53,7 +53,7 @@
             // Fetch user details to determine if user is admin
             async function fetchUserDetails() {
                 try {
-                    const response = await fetch('http://localhost/api/users/me/', {
+                    const response = await fetch('http://142.93.171.201/api/users/me/', {
                         method: 'GET',
                         headers: {
                             'Content-Type': 'application/json',
@@ -75,7 +75,7 @@
             // Fetch and display the course details
             async function loadCourse() {
                 try {
-                    const response = await fetch(`http://localhost:8000/course/api/courses/${courseId}/`, {
+                    const response = await fetch(`http://142.93.171.201:8000/course/api/courses/${courseId}/`, {
                         headers: {
                             'Authorization': `Token ${token}`,
                         },
@@ -99,7 +99,7 @@
             // Fetch and display comments
             async function loadComments() {
                 try {
-                    const response = await fetch(`http://localhost:8000/course/api/courses/${courseId}/comments/`, {
+                    const response = await fetch(`http://142.93.171.201:8000/course/api/courses/${courseId}/comments/`, {
                         headers: {
                             'Authorization': `Token ${token}`,
                         },
@@ -157,7 +157,7 @@
                 }
 
                 try {
-                    const response = await fetch(`http://localhost:8000/course/api/courses/${courseId}/comments/`, {
+                    const response = await fetch(`http://142.93.171.201:8000/course/api/courses/${courseId}/comments/`, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
@@ -186,7 +186,7 @@
                 }
 
                 try {
-                    const response = await fetch(`http://localhost:8000/course/api/comments/${commentId}/`, {
+                    const response = await fetch(`http://142.93.171.201:8000/course/api/comments/${commentId}/`, {
                         method: 'DELETE',
                         headers: {
                             'Authorization': `Token ${token}`,

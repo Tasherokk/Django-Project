@@ -31,7 +31,7 @@
             let profileId;
 
             try {
-                const profileResponse = await fetch(`http://localhost:8000/api/users/profile/${username}/`, {
+                const profileResponse = await fetch(`http://142.93.171.201:8000/api/users/profile/${username}/`, {
                     method: 'GET',
                     headers: {
                         'Authorization': `Token ${token}`,
@@ -56,7 +56,7 @@
             }
 
             try {
-                const updateResponse = await fetch(`http://localhost:8000/api/users/profile/edit/${profileId}/`, {
+                const updateResponse = await fetch(`http://142.93.171.201:8000/api/users/profile/edit/${profileId}/`, {
                     method: 'PATCH',
                     headers: {
                         'Authorization': `Token ${token}`,
@@ -93,7 +93,7 @@
             const username = localStorage.getItem('username');
 
             try {
-                const response = await fetch(`http://localhost:8000/api/users/profile/${username}/`, {
+                const response = await fetch(`http://142.93.171.201:8000/api/users/profile/${username}/`, {
                     headers: {
                         'Authorization': `Token ${token}`,
                     },
