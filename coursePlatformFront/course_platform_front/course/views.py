@@ -2,7 +2,7 @@ import requests  # Импортируйте requests правильно
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 
-BACKEND_URL = "http://127.0.0.1:8000/course/api/"
+BACKEND_URL = "http://localhost:8000/course/api/"
 
 
 def courses(request):

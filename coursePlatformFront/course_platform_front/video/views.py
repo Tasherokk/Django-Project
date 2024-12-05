@@ -1,7 +1,7 @@
 import requests
 from django.shortcuts import render
 
-BACKEND_URL = "http://127.0.0.1:8000/video/api/"
+BACKEND_URL = "http://localhost:8000/video/api/"
 
 
 def video_list(request, topic_id, pk):

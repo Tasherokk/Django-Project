@@ -8,7 +8,7 @@
         <div class="row">
             <h2>Preview</h2>
             <img width="500px" class="preview" src="{{ video.image }}" alt="">
-            <h4><a href="http://127.0.0.1:8000/video/api/stream/{{ video.id }}/">Watch on Full Screen</a></h4>
+            <h4><a href="http://localhost:8000/video/api/stream/{{ video.id }}/">Watch on Full Screen</a></h4>
             <p>{{ video.description }}</p>
         </div>
 
@@ -92,7 +92,7 @@
             event.preventDefault();  // Предотвратить стандартное поведение формы
 
             // Отправляем AJAX-запрос
-            fetch(`http://127.0.0.1:8000/quiz/api/submit_test/${videoId}`, {
+            fetch(`http://localhost:8000/quiz/api/submit_test/${videoId}`, {
                 method: 'POST',
                 headers: {
                     'Authorization': `Token ${token}`,
@@ -162,7 +162,7 @@
 
 <!--            const videoId = {{ video.id }};-->
 <!--            // Отправляем AJAX-запрос-->
-<!--            fetch(`http://127.0.0.1:8000/quiz/api/submit_test/${videoId}`, {-->
+<!--            fetch(`http://localhost:8000/quiz/api/submit_test/${videoId}`, {-->
 <!--                method: 'POST',-->
 <!--                headers: {-->
 <!--                    'Authorization': `Token ${token}`,-->
