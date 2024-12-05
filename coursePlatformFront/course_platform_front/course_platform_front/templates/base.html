@@ -148,7 +148,7 @@
   const closeChatbot = document.querySelector("#close-chatbot");
   
   // Адрес API вашего бэкенда
-  const API_URL = "http://localhost:8000/assistant/create/";
+  const API_URL = "http://142.93.171.201:8000/assistant/create/";
   
   // Инициализация данных пользователя
   const userData = {
@@ -320,7 +320,7 @@
 
     document.getElementById('logout-button').addEventListener('click', async () => {
         const token = localStorage.getItem('token');
-        const response = await fetch('http://localhost:8000/api/users/logout/', {
+        const response = await fetch('http://142.93.171.201:8000/api/users/logout/', {
             method: 'POST',
             headers: {
                 'Authorization': `Token ${token}`,
