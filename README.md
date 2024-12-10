@@ -1,6 +1,6 @@
-# Oyla - Free Online Educational Platform
+# Skillnet - Free Online Educational Platform
 
-**Oyla** is a free, user-friendly online platform designed to deliver a wide range of educational courses. The platform caters to students, instructors, and administrators, providing tools for course enrollment, progress tracking, content management, assessments, and platform management.
+**Skillnet** is a free, user-friendly online platform designed to deliver a wide range of educational courses. The platform caters to students, instructors, and administrators, providing tools for course enrollment, progress tracking, content management, assessments, and platform management.
 
 ## Table of Contents
 - [Features](#features)
